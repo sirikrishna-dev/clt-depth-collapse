@@ -1,7 +1,18 @@
 
-from collections import defaultdict, deque
+from collections import defaultdict
 from dataclasses import dataclass, field
 from math import isfinite
+
+
+@dataclass
+class AttributionNode:
+    """A feature node in an attribution graph."""
+
+    node_id: str
+    layer: int | None = None
+    feature_id: str | int | None = None
+    activation: float | None = None
+    hook_point: str | None = None
 
 
 @dataclass
@@ -10,11 +21,52 @@ class AttributionGraph:
 
     edges: list = field(default_factory=list)
     nodes: set = field(default_factory=set)
+    node_metadata: dict = field(default_factory=dict)
+    metadata: dict = field(default_factory=dict)
 
-    def add_node(self, node):
-        self.nodes.add(node)
+    def add_node(
+        self,
+        node,
+        layer=None,
+        feature_id=None,
+        activation=None,
+        hook_point=None,
+    ):
+        """Add a node, optionally recording its feature metadata."""
+        if isinstance(node, AttributionNode):
+            node_id = node.node_id
+            details = {
+                "layer": node.layer,
+                "feature_id": node.feature_id,
+                "activation": node.activation,
+                "hook_point": node.hook_point,
+            }
+        else:
+            node_id = node
+            details = {
+                "layer": layer,
+                "feature_id": feature_id,
+                "activation": activation,
+                "hook_point": hook_point,
+            }
+
+        if layer is not None and (
+            not isinstance(layer, int) or isinstance(layer, bool)
+        ):
+            raise ValueError("Layer must be an integer.")
+
+        if activation is not None:
+            if not isfinite(activation):
+                raise ValueError("Activation must be finite.")
+            details["activation"] = float(activation)
+
+        self.nodes.add(node_id)
+
+        if any(value is not None for value in details.values()):
+            self.node_metadata[node_id] = details
 
     def add_edge(self, source, target, weight):
+        """Add a directed edge with a finite signed attribution weight."""
         if not isfinite(weight):
             raise ValueError("Edge weight must be finite.")
 
