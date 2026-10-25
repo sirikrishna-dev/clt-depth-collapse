@@ -36,14 +36,55 @@ Across three 2-hop model seeds, the intermediate XOR value u was
 almost perfectly linearly decodable from both encoder layers on the
 random test split. This demonstrates linear accessibility, not causal use.
 
-## Activation patching
-Whole-layer replacement can transfer a donor's computation wholesale and
-is not evidence that a specific intermediate feature is represented.
+## Activation patching and checkpoint status
+The current learned-model validation reruns activation patching for all six
+checkpoints and writes:
 
-Targeted token-level patching changed recipient predictions when donor
-and recipient u differed, while the recorded same-u control did not.
-This is preliminary: replacing a full token hidden vector is not a
-selective intervention on u alone.
+- `results/learned_model_patching_all_checkpoints.csv` (row-level interventions)
+- `results/learned_model_patching_summary.csv` (rates by checkpoint, tested
+  intermediate, layer, and intervention group)
+- `results/patching_filter_checkpoint_status.csv` (exploratory screen only)
+- `results/layer_hook_diagnostics.csv` (hook calls, activation shapes, and
+  layer-to-layer activation differences)
+
+The summary uses `EXPLORATORY_RESULT_NOT_CAUSAL_VALIDATION`; checkpoint metadata
+uses `patching_status: exploratory_screen_pass` when the post-hoc screen passes,
+`causal_validation_status: incomplete`, and `validated: false`. These fields
+are intentionally not a contradiction: `PASS_EXPLORATORY` means only that the
+specified exploratory thresholds were met, not that the model is causally
+validated.
+
+The current rerun found that each layer hook fired once during the clean pass
+for every checkpoint, both layers had shape `(1000, 16, 64)`, and their clean
+activation tensors were not equal (mean absolute differences were nonzero and
+all elements differed beyond the numerical tolerance). Thus the hooks are
+attached to distinct layer outputs. However, the patched output bit was exactly
+the same for corresponding Layer 1 and Layer 2 intervention rows. This remains
+an observed result requiring interpretation; it is not proof that the layers
+are interchangeable. The patching intervention can cause the same binary
+output at both locations even though the hidden activations differ.
+
+The task-specific pair construction now tests:
+
+- 2-hop `u`: recipients and donors are matched with `c=1`; treatment changes
+  `u`, while controls hold `u` fixed.
+- 3-hop `u`: `c=1` and `d` are matched; treatment changes `u`, while controls
+  hold `u` fixed.
+- 3-hop `v`: `d` is matched; treatment changes `v`, while controls hold `v`
+  fixed.
+
+All six checkpoints currently pass the post-hoc exploratory thresholds, with
+100% treatment prediction flips and 0% control flips in the measured groups.
+The criterion was not preregistered. Critically, the script replaces the full
+64-dimensional hidden vector at one bit-position token, not an isolated `u` or
+`v` feature. The donor/recipient matching improves the behavioral contrast but
+does not make the internal intervention selective. Therefore these results are
+exploratory evidence, not selective causal proof; metadata correctly keeps
+`validated: false` and `causal_validation_status: incomplete`.
+
+Whole-layer replacement can transfer a donor's computation wholesale and is
+not evidence that a specific intermediate feature is represented. Linear
+probing shows accessibility, not causal use.
 
 ## Directional intervention
 The recorded probe-direction experiment produced no prediction flips.

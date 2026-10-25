@@ -19,6 +19,15 @@
       "location": "not_identified_yet"
     }
   },
-  "patching_status": "not_run",
-  "validated": false
+  "patching_status": "exploratory_screen_pass",
+  "validated": false,
+  "causal_validation_status": "incomplete",
+  "patching_evidence": {
+    "raw_results": "results/learned_model_patching_all_checkpoints.csv",
+    "summary": "results/learned_model_patching_summary.csv",
+    "hook_diagnostics": "results/layer_hook_diagnostics.csv",
+    "status_report": "results/patching_filter_checkpoint_status.csv",
+    "intervention": "full hidden vector at one bit-position token",
+    "limitation": "not selective intervention on u or v; exploratory screen only"
+  }
 }

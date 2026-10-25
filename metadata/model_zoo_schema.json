@@ -1,3 +1,4 @@
+
 {
   "model_id": "example_not_a_real_run",
   "source": "hand_built_transformer_or_interpbench",
@@ -14,6 +15,7 @@
       "location": "measured_layer_or_not_identified_yet"
     }
   },
-  "patching_status": "not_run|passed|failed",
+  "patching_status": "not_run|exploratory_screen_pass|exploratory_screen_fail|passed|failed",
+  "causal_validation_status": "incomplete|passed|failed|not_run",
   "validated": "boolean"
 }

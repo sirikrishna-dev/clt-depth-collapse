@@ -22,3 +22,17 @@ XOR is associative, and Boolean expressions can have equivalent implementations.
 2. Use causal interventions on a candidate internal representation.
 3. Predefine a pass/fail criterion (for example, intervention causes a statistically reliable output change in the expected direction).
 4. Record intervention results and do not mark failed or untested models as validated.
+
+
+## Patching validation interpretation (current status)
+
+The learned-model patching screen separately evaluates `u` in both tasks and
+`v` in the 3-hop task using matched donor/recipient rows. Results are recorded
+in `results/learned_model_patching_all_checkpoints.csv` and summarized in
+`results/learned_model_patching_summary.csv`. `PASS_EXPLORATORY` is a post-hoc
+threshold screen only; the model metadata remains `validated: false`. The
+intervention patches a full token hidden vector and therefore cannot isolate a
+particular represented intermediate feature. `results/layer_hook_diagnostics.csv`
+checks hook calls and confirms that Layer 1 and Layer 2 activations are distinct,
+even though corresponding patched binary predictions were identical in this
+experiment.
