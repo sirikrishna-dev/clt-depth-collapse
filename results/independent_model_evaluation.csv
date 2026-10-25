@@ -1,0 +1,7 @@
+model_id,task,seed,test_examples,test_bit_accuracy,test_exact_vector_accuracy,checkpoint
+2hop_L2_seed0,2hop,0,1000,1.0,1.0,checkpoints/2hop_L2_seed0.pt
+2hop_L2_seed1,2hop,1,1000,1.0,1.0,checkpoints/2hop_L2_seed1.pt
+2hop_L2_seed2,2hop,2,1000,1.0,1.0,checkpoints/2hop_L2_seed2.pt
+3hop_L2_seed0,3hop,0,1000,1.0,1.0,checkpoints/3hop_L2_seed0.pt
+3hop_L2_seed1,3hop,1,1000,1.0,1.0,checkpoints/3hop_L2_seed1.pt
+3hop_L2_seed2,3hop,2,1000,1.0,1.0,checkpoints/3hop_L2_seed2.pt

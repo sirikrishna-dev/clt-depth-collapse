@@ -1,0 +1,20 @@
+{
+  "model_id": "2hop_L2_seed2",
+  "source": "hand_built_transformer",
+  "task": "2hop",
+  "hop_depth": 2,
+  "layers": 2,
+  "seed": 2,
+  "checkpoint": "checkpoints/2hop_L2_seed2.pt",
+  "best_validation_bce": 0.00011313126742606983,
+  "test_bit_accuracy": 1.0,
+  "test_exact_vector_accuracy": 1.0,
+  "intermediates": {
+    "u": {
+      "definition": "XOR(a,b)",
+      "location": "not_identified_yet"
+    }
+  },
+  "patching_status": "not_run",
+  "validated": false
+}

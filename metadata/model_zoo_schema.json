@@ -1,0 +1,19 @@
+{
+  "model_id": "example_not_a_real_run",
+  "source": "hand_built_transformer_or_interpbench",
+  "task": "2hop_or_3hop",
+  "hop_depth": "integer",
+  "layers": "integer_2_to_6",
+  "seed": "integer",
+  "checkpoint": "path_or_null",
+  "test_bit_accuracy": "float_or_null",
+  "test_exact_vector_accuracy": "float_or_null",
+  "intermediates": {
+    "u": {
+      "definition": "equation",
+      "location": "measured_layer_or_not_identified_yet"
+    }
+  },
+  "patching_status": "not_run|passed|failed",
+  "validated": "boolean"
+}

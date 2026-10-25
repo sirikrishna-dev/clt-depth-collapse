@@ -1,0 +1,34 @@
+{
+  "seed": 20261025,
+  "bits_per_operand": 16,
+  "split_sizes_per_task": {
+    "train": 5000,
+    "validation": 1000,
+    "test": 1000
+  },
+  "tasks": {
+    "2hop": {
+      "equations": [
+        "u = XOR(a,b)",
+        "y = AND(u,c)"
+      ],
+      "hop_depth": 2,
+      "intermediates": [
+        "u"
+      ]
+    },
+    "3hop": {
+      "equations": [
+        "u = XOR(a,b)",
+        "v = AND(u,c)",
+        "y = XOR(v,d)"
+      ],
+      "hop_depth": 3,
+      "intermediates": [
+        "u",
+        "v"
+      ]
+    }
+  },
+  "note": "Random input-example splits; these are not held-out expression-composition splits."
+}

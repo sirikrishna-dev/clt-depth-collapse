@@ -1,0 +1,24 @@
+{
+  "model_id": "3hop_L2_seed1",
+  "source": "hand_built_transformer",
+  "task": "3hop",
+  "hop_depth": 3,
+  "layers": 2,
+  "seed": 1,
+  "checkpoint": "checkpoints/3hop_L2_seed1.pt",
+  "best_validation_bce": 0.00010877819295274094,
+  "test_bit_accuracy": 1.0,
+  "test_exact_vector_accuracy": 1.0,
+  "intermediates": {
+    "u": {
+      "definition": "XOR(a,b)",
+      "location": "not_identified_yet"
+    },
+    "v": {
+      "definition": "AND(u,c)",
+      "location": "not_identified_yet"
+    }
+  },
+  "patching_status": "not_run",
+  "validated": false
+}

@@ -1,0 +1,3 @@
+layer,n_train_examples,n_test_examples,mean_test_accuracy,std_test_accuracy_across_bits,mean_balanced_accuracy,mean_majority_baseline
+1,5000,1000,1.0,0.0,1.0,0.511375
+2,5000,1000,0.9995,0.0008164965809277268,0.9994957955401587,0.511375
