@@ -33,6 +33,7 @@ class AttributionGraph:
         hook_point=None,
     ):
         """Add a node, optionally recording its feature metadata."""
+
         if isinstance(node, AttributionNode):
             node_id = node.node_id
             details = {
@@ -50,15 +51,28 @@ class AttributionGraph:
                 "hook_point": hook_point,
             }
 
-        if layer is not None and (
-            not isinstance(layer, int) or isinstance(layer, bool)
+        # Validate the layer value, including values inside AttributionNode.
+        node_layer = details["layer"]
+        if node_layer is not None and (
+            not isinstance(node_layer, int)
+            or isinstance(node_layer, bool)
+            or node_layer < 0
         ):
             raise ValueError("Layer must be an integer.")
 
-        if activation is not None:
-            if not isfinite(activation):
-                raise ValueError("Activation must be finite.")
-            details["activation"] = float(activation)
+        # Validate activation values.
+        node_activation = details["activation"]
+        if node_activation is not None:
+            if (
+                not isinstance(node_activation, (int, float))
+                or isinstance(node_activation, bool)
+            ):
+                raise ValueError("Activation must be a finite number.")
+
+            if not isfinite(node_activation):
+                raise ValueError("Activation must be a finite number.")
+
+            details["activation"] = float(node_activation)
 
         self.nodes.add(node_id)
 
@@ -67,20 +81,32 @@ class AttributionGraph:
 
     def add_edge(self, source, target, weight):
         """Add a directed edge with a finite signed attribution weight."""
+
+        if (
+            not isinstance(weight, (int, float))
+            or isinstance(weight, bool)
+        ):
+            raise ValueError("Edge weight must be a finite number.")
+
         if not isfinite(weight):
-            raise ValueError("Edge weight must be finite.")
+            raise ValueError("Edge weight must be a finite number.")
 
         self.nodes.update((source, target))
         self.edges.append((source, target, float(weight)))
 
     def adjacency(self):
+        """Return the directed adjacency list with edge weights."""
+
         graph = defaultdict(list)
+
         for source, target, weight in self.edges:
             graph[source].append((target, weight))
+
         return graph
 
     def enumerate_simple_paths(self, inputs, outputs):
         """Return simple input-to-output paths and their edge weights."""
+
         adjacency = self.adjacency()
         output_nodes = set(outputs)
         paths = []

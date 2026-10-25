@@ -1,4 +1,4 @@
-
+from src.metrics.graph_utils import AttributionNode
 import math
 import unittest
 
@@ -107,6 +107,94 @@ class TestDepthCollapse(unittest.TestCase):
                 {"inputs": ["input"], "outputs": ["output"], "depth": 2},
             )
 
+    def test_invalid_layer_in_attribution_node(self):
+        graph = AttributionGraph()
+        node = AttributionNode(node_id="feature", layer=1.5)
+
+        with self.assertRaises(ValueError):
+            graph.add_node(node)
+
+    def test_non_finite_node_activation_is_rejected(self):
+        graph = AttributionGraph()
+
+        with self.assertRaises(ValueError):
+            graph.add_node("feature", activation=float("nan"))
+
+    def test_string_edge_weight_is_rejected(self):
+        graph = AttributionGraph()
+
+        with self.assertRaises(ValueError):
+            graph.add_edge("input", "output", "invalid")
+
+    def test_boolean_edge_weight_is_rejected(self):
+        graph = AttributionGraph()
+
+        with self.assertRaises(ValueError):
+            graph.add_edge("input", "output", True)
+
+
+    def test_multiple_inputs_and_outputs(self):
+        graph = AttributionGraph()
+        graph.add_edge("input1", "output1", 2.0)
+        graph.add_edge("input2", "middle", 1.0)
+        graph.add_edge("middle", "output2", 3.0)
+
+        score = collapse(
+            graph,
+            {
+                "inputs": ["input1", "input2"],
+                "outputs": ["output1", "output2"],
+                "depth": 2,
+            },
+        )
+
+        self.assertAlmostEqual(score, 2.0 / 5.0)
+
+    def test_duplicate_edges_are_counted_separately(self):
+        graph = AttributionGraph()
+        graph.add_edge("input", "output", 1.0)
+        graph.add_edge("input", "output", 2.0)
+
+        score = collapse(
+            graph,
+            {
+                "inputs": ["input"],
+                "outputs": ["output"],
+                "depth": 2,
+            },
+        )
+
+        self.assertAlmostEqual(score, 1.0)
+
+    def test_attribution_node_metadata_is_preserved(self):
+        graph = AttributionGraph()
+        node = AttributionNode(
+            node_id="feature_0",
+            layer=1,
+            feature_id=0,
+            activation=0.75,
+            hook_point="mlp",
+        )
+
+        graph.add_node(node)
+
+        self.assertIn("feature_0", graph.nodes)
+        self.assertEqual(graph.node_metadata["feature_0"]["layer"], 1)
+        self.assertEqual(graph.node_metadata["feature_0"]["feature_id"], 0)
+        self.assertAlmostEqual(
+            graph.node_metadata["feature_0"]["activation"], 0.75
+        )
+        self.assertEqual(
+            graph.node_metadata["feature_0"]["hook_point"], "mlp"
+        )
+
+    def test_negative_layer_in_attribution_node_is_rejected(self):
+        graph = AttributionGraph()
+        node = AttributionNode(node_id="feature", layer=-1)
+
+        # Negative layer indices are invalid for this project.
+        with self.assertRaises(ValueError):
+            graph.add_node(node)
 
 if __name__ == "__main__":
     unittest.main()
