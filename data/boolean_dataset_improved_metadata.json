@@ -1,0 +1,60 @@
+{
+  "project": "CLT Depth-Collapse Project",
+  "version": "2.0",
+  "seed": 20261025,
+  "n_bits_per_input_vector": 16,
+  "split_sizes_per_task": {
+    "train": 5000,
+    "validation": 1000,
+    "test": 1000
+  },
+  "total_rows_per_task": 7000,
+  "total_rows_combined": 14000,
+  "tasks": {
+    "boolean_2hop_xor_then_and": {
+      "equations": [
+        "u = bitwise_XOR(a, b)",
+        "y = bitwise_AND(u, c)"
+      ],
+      "inputs": [
+        "a",
+        "b",
+        "c"
+      ],
+      "intermediates": [
+        "u"
+      ],
+      "output": "y",
+      "hop_depth": 2,
+      "rows": 7000
+    },
+    "boolean_3hop_xor_and_then_xor": {
+      "equations": [
+        "u = bitwise_XOR(a, b)",
+        "v = bitwise_AND(u, c)",
+        "y = bitwise_XOR(v, d)"
+      ],
+      "inputs": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "intermediates": [
+        "u",
+        "v"
+      ],
+      "output": "y",
+      "hop_depth": 3,
+      "rows": 7000
+    }
+  },
+  "columns": "Each vector is represented by bit columns, e.g. a_00 through a_15; intermediate and output vectors use the same convention.",
+  "split_policy": "Random independent input tuples; exact input tuples are unique across train/validation/test within each task.",
+  "limitations": [
+    "This is a synthetic supervised dataset and provides equation-level ground truth, not evidence that a trained transformer internally uses the intended intermediates.",
+    "Vector-valued Boolean operations increase input-space size, but a model may still learn an equivalent shortcut.",
+    "Causal interventions on trained model activations are required to assess intermediate dependence.",
+    "Do not combine 2-hop and 3-hop examples without retaining the task and hop_depth fields."
+  ]
+}
