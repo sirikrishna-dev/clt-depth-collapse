@@ -50,6 +50,9 @@ def collapse(graph, ground_truth) -> float:
 
     total_mass = one_hop_mass + multi_hop_mass
 
+    if not isfinite(total_mass):
+        raise ValueError("Total path attribution mass overflowed.")
+
     if total_mass == 0:
         return float("nan")
 
