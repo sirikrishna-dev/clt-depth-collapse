@@ -1,0 +1,7 @@
+checkpoint,clean_bit_accuracy_min,layer1_treatment_flip_rate,layer1_control_flip_rate,layer2_treatment_flip_rate,layer2_control_flip_rate,screen_status,criterion,caveat
+2hop_L2_seed0.pt,1.0,1.0,0.0,1.0,0.0,PASS_EXPLORATORY,clean accuracy >= 0.99; treatment flip >= 0.90; control flip <= 0.10 at both layers,Post-hoc screen; full-token-vector patching; not selective causal proof
+2hop_L2_seed1.pt,1.0,1.0,0.0,1.0,0.0,PASS_EXPLORATORY,clean accuracy >= 0.99; treatment flip >= 0.90; control flip <= 0.10 at both layers,Post-hoc screen; full-token-vector patching; not selective causal proof
+2hop_L2_seed2.pt,1.0,1.0,0.0,1.0,0.0,PASS_EXPLORATORY,clean accuracy >= 0.99; treatment flip >= 0.90; control flip <= 0.10 at both layers,Post-hoc screen; full-token-vector patching; not selective causal proof
+3hop_L2_seed0.pt,1.0,1.0,0.0,1.0,0.0,PASS_EXPLORATORY,clean accuracy >= 0.99; treatment flip >= 0.90; control flip <= 0.10 at both layers,Post-hoc screen; full-token-vector patching; not selective causal proof
+3hop_L2_seed1.pt,1.0,1.0,0.0,1.0,0.0,PASS_EXPLORATORY,clean accuracy >= 0.99; treatment flip >= 0.90; control flip <= 0.10 at both layers,Post-hoc screen; full-token-vector patching; not selective causal proof
+3hop_L2_seed2.pt,1.0,1.0,0.0,1.0,0.0,PASS_EXPLORATORY,clean accuracy >= 0.99; treatment flip >= 0.90; control flip <= 0.10 at both layers,Post-hoc screen; full-token-vector patching; not selective causal proof
