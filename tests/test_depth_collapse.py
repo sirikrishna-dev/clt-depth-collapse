@@ -188,6 +188,7 @@ class TestDepthCollapse(unittest.TestCase):
             graph.node_metadata["feature_0"]["hook_point"], "mlp"
         )
 
+    
     def test_negative_layer_in_attribution_node_is_rejected(self):
         graph = AttributionGraph()
         node = AttributionNode(node_id="feature", layer=-1)
@@ -195,6 +196,22 @@ class TestDepthCollapse(unittest.TestCase):
         # Negative layer indices are invalid for this project.
         with self.assertRaises(ValueError):
             graph.add_node(node)
+
+    def test_non_causal_graph_is_rejected(self):
+        graph = AttributionGraph()
+        graph.add_edge("input", "output", 1.0)
+        graph.metadata["causal_edges"] = False
+
+        with self.assertRaisesRegex(ValueError, "non-causal"):
+            collapse(
+                graph,
+                {
+                    "inputs": ["input"],
+                    "outputs": ["output"],
+                    "depth": 2,
+                },
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

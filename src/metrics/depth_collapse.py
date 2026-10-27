@@ -13,16 +13,29 @@ def collapse(graph, ground_truth) -> float:
 
     Path mass is the product of absolute edge weights.
     Paths are grouped by edge count: one edge vs. two or more.
+
+    Graphs explicitly marked causal_edges=False are rejected because
+    their edge semantics do not support causal-depth interpretation.
     """
     if not isinstance(graph, AttributionGraph):
         raise TypeError("graph must be an AttributionGraph.")
+
+    if graph.metadata.get("causal_edges") is False:
+        raise ValueError(
+            "Cannot calculate depth collapse on a graph explicitly "
+            "marked as non-causal."
+        )
 
     required = {"inputs", "outputs", "depth"}
     if not required.issubset(ground_truth):
         raise ValueError(f"ground_truth must contain {required}.")
 
     depth = ground_truth["depth"]
-    if not isinstance(depth, int) or isinstance(depth, bool) or depth < 1:
+    if (
+        not isinstance(depth, int)
+        or isinstance(depth, bool)
+        or depth < 1
+    ):
         raise ValueError("Ground-truth depth must be a positive integer.")
 
     paths = graph.enumerate_simple_paths(
