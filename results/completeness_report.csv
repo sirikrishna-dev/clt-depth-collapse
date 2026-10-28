@@ -1,0 +1,13 @@
+task,base_seed,model_type,base_checkpoint,completeness_status
+2hop,0,plt,C:\Users\SIRI KRISHNA C.R\Downloads\clt-depth-collapse-person2-agreed-interface\person2_mlp_update\checkpoints\2hop_L2_seed0.pt,PRESENT
+2hop,0,clt,C:\Users\SIRI KRISHNA C.R\Downloads\clt-depth-collapse-person2-agreed-interface\person2_mlp_update\checkpoints\2hop_L2_seed0.pt,PRESENT
+2hop,1,plt,C:\Users\SIRI KRISHNA C.R\Downloads\clt-depth-collapse-person2-agreed-interface\person2_mlp_update\checkpoints\2hop_L2_seed1.pt,PRESENT
+2hop,1,clt,C:\Users\SIRI KRISHNA C.R\Downloads\clt-depth-collapse-person2-agreed-interface\person2_mlp_update\checkpoints\2hop_L2_seed1.pt,PRESENT
+2hop,2,plt,C:\Users\SIRI KRISHNA C.R\Downloads\clt-depth-collapse-person2-agreed-interface\person2_mlp_update\checkpoints\2hop_L2_seed2.pt,PRESENT
+2hop,2,clt,C:\Users\SIRI KRISHNA C.R\Downloads\clt-depth-collapse-person2-agreed-interface\person2_mlp_update\checkpoints\2hop_L2_seed2.pt,PRESENT
+3hop,0,plt,C:\Users\SIRI KRISHNA C.R\Downloads\clt-depth-collapse-person2-agreed-interface\person2_mlp_update\checkpoints\3hop_L2_seed0.pt,PRESENT
+3hop,0,clt,C:\Users\SIRI KRISHNA C.R\Downloads\clt-depth-collapse-person2-agreed-interface\person2_mlp_update\checkpoints\3hop_L2_seed0.pt,PRESENT
+3hop,1,plt,C:\Users\SIRI KRISHNA C.R\Downloads\clt-depth-collapse-person2-agreed-interface\person2_mlp_update\checkpoints\3hop_L2_seed1.pt,PRESENT
+3hop,1,clt,C:\Users\SIRI KRISHNA C.R\Downloads\clt-depth-collapse-person2-agreed-interface\person2_mlp_update\checkpoints\3hop_L2_seed1.pt,PRESENT
+3hop,2,plt,C:\Users\SIRI KRISHNA C.R\Downloads\clt-depth-collapse-person2-agreed-interface\person2_mlp_update\checkpoints\3hop_L2_seed2.pt,PRESENT
+3hop,2,clt,C:\Users\SIRI KRISHNA C.R\Downloads\clt-depth-collapse-person2-agreed-interface\person2_mlp_update\checkpoints\3hop_L2_seed2.pt,PRESENT
