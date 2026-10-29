@@ -1,0 +1,2 @@
+task,base_checkpoint,plt_run_id,clt_run_id,plt_validation_relative_l2,clt_validation_relative_l2,absolute_gap,tolerance,status
+2hop,C:\Users\rushm\Downloads\clt-depth-collapse-feature-person1-siit-causal-validation\clt-depth-collapse-feature-person1-siit-causal-validation\checkpoints\2hop_L2_siit_k1_seed0.pt,2hop_plt_seed0_features128_span1,2hop_clt_seed0_features128_span2,0.0129783630514118,0.0143695911826869,0.0013912281312750997,0.02,PROVISIONAL_MATCH

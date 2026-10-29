@@ -89,3 +89,84 @@ Person 3 or another downstream consumer can reload a replacement model with `src
 Person 3 agreed to use the MLP input-to-MLP-write interface as the primary PLT/CLT target, with residual-stream block input/output captures as supplementary diagnostics. The updated `activation_cache.py` supports both. `inspect_activations.py` captures both interfaces; training captures only the primary MLP target to control memory use.
 
 A local smoke-test bundle contains a copy of the original 2-hop seed-0 checkpoint so the user can run the first pilot. The checkpoint is ignored by Git in this Person 2 bundle to avoid accidentally duplicating shared base-model artifacts. Check the team branch/asset policy before merging checkpoints or generated replacement binaries.
+
+
+## 2-Hop SIIT Replacement-Model Experiment — 29 October 2026
+
+### Objective
+
+Evaluate PLT and CLT-style replacement models on Person 1's 2-hop SIIT Transformer checkpoint and test whether their learned features can predict the known intermediate variable:
+
+`u = XOR(a, b)`
+
+### Configuration
+
+- Task: 2-hop Boolean task
+- Base checkpoint: `2hop_L2_siit_k1_seed0.pt`
+- Training examples: 5,000
+- Validation examples: 1,000
+- Test examples: 1,000
+- PLT features per layer: 128
+- CLT-style features per layer: 128
+- Sparsity coefficient: 0.0001
+- Training epochs: 20
+- CLT-style write span: 2
+
+The original Transformer receives only the task operands. Intermediate labels are used for evaluation, not as model inputs.
+
+### Reconstruction fidelity
+
+| Model | Validation relative L2 | Test relative L2 |
+|---|---:|---:|
+| PLT | 0.012978 | 0.013776 |
+| CLT-style | 0.014370 | 0.015596 |
+
+The validation relative-L2 gap is approximately 0.001391. This falls within the provisional comparison tolerance of 0.02, which has not yet been approved by the team.
+
+The original Transformer achieved 100% test bit accuracy and 100% exact-vector accuracy.
+
+### Intermediate recovery
+
+A logistic-regression probe was fitted using training-split representations and evaluated separately on validation and test representations.
+
+| Representation | Validation accuracy | Test accuracy | Test F1 |
+|---|---:|---:|---:|
+| SIIT hidden dimension 0, block 0 | 100% | 100% | 100% |
+| PLT layer 0 | 100% | 100% | 100% |
+| PLT layer 1 | 100% | 100% | 100% |
+| CLT-style layer 0 | 100% | 100% | 100% |
+| CLT-style layer 1 | 100% | 100% | 100% |
+
+The results show that the intermediate `u` is linearly predictable from the tested representations on this dataset.
+
+### Files produced
+
+- `src/replacements/evaluate_intermediate.py`
+- `results/person2/2hop_plt_seed0_features128_span1.pt`
+- `results/person2/2hop_clt_seed0_features128_span2.pt`
+- `results/person2/fidelity_table.csv`
+- `results/person2/fidelity_matching_report.csv`
+- `results/person2/intermediate_recovery.json`
+
+Additional JSON and history files are saved under `results/person2/`.
+
+### Reproduction command
+
+Run from the repository root:
+
+```cmd
+python -m src.replacements.evaluate_intermediate --checkpoint "C:\Users\rushm\Downloads\clt-depth-collapse-feature-person1-siit-causal-validation\clt-depth-collapse-feature-person1-siit-causal-validation\checkpoints\2hop_L2_siit_k1_seed0.pt" --data data\boolean_2hop_improved.csv
+```
+
+### Limitations and next steps
+
+1. Probe accuracy measures predictability; it does not prove causal faithfulness or that an individual feature represents XOR.
+2. The CLT-style model is a project-specific baseline. Its equivalence to a canonical CLT implementation has not been established.
+3. The 0.02 relative-L2 comparison tolerance is provisional.
+4. Confirm the shared feature and graph interface with Person 3 before making attribution-graph claims.
+5. Extend evaluation to additional seeds and the 3-hop task before drawing general conclusions.
+6. Use validation results for model selection and reserve the test split for final evaluation.
+
+### Current status
+
+The 2-hop SIIT PLT and CLT-style baselines have been trained, their reconstruction fidelity has been measured, and intermediate-recovery probes have been evaluated on held-out data. These are pilot results, not yet evidence that the replacement models produce causally faithful explanation graphs.
