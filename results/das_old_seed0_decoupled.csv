@@ -1,0 +1,11 @@
+ckpt,layer,hyp,k,acc_all,acc_flip,n_flip
+checkpoints/2hop_L2_seed0.pt,0,u,1,0.7365624904632568,0.4845449924468994,8088
+checkpoints/2hop_L2_seed0.pt,0,u,2,0.6442499756813049,0.3114490509033203,8088
+checkpoints/2hop_L2_seed0.pt,0,a,1,0.5027499794960022,0.19408805668354034,7950
+checkpoints/2hop_L2_seed0.pt,0,a,2,0.6163750290870667,0.34930816292762756,7950
+checkpoints/2hop_L2_seed0.pt,0,b,1,0.4975624978542328,0.16853372752666473,8034
+checkpoints/2hop_L2_seed0.pt,0,b,2,0.6046249866485596,0.3150360882282257,8034
+checkpoints/2hop_L2_seed0.pt,0,c,1,1.0,1.0,7968
+checkpoints/2hop_L2_seed0.pt,0,c,2,1.0,1.0,7968
+checkpoints/2hop_L2_seed0.pt,0,y,1,1.0,1.0,7968
+checkpoints/2hop_L2_seed0.pt,0,y,2,1.0,1.0,7968

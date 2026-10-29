@@ -1,0 +1,30 @@
+{
+  "model_id": "2hop_L2_seed2",
+  "source": "standard_trained_transformer",
+  "task": "2hop",
+  "hop_depth": 2,
+  "layers": 2,
+  "seed": 2,
+  "checkpoint": "checkpoints/2hop_L2_seed2.pt",
+  "best_validation_bce": 0.00011313126742606983,
+  "test_bit_accuracy": 1.0,
+  "test_exact_vector_accuracy": 1.0,
+  "intermediates": {
+    "u": {
+      "definition": "XOR(a,b)",
+      "location": "not_identified_yet"
+    }
+  },
+  "patching_status": "exploratory_screen_pass",
+  "validated": false,
+  "causal_validation_status": "incomplete",
+  "patching_evidence": {
+    "raw_results": "results/learned_model_patching_all_checkpoints.csv",
+    "summary": "results/learned_model_patching_summary.csv",
+    "hook_diagnostics": "results/layer_hook_diagnostics.csv",
+    "status_report": "results/patching_filter_checkpoint_status.csv",
+    "intervention": "full hidden vector at one bit-position token",
+    "limitation": "not selective intervention on u or v; exploratory screen only"
+  },
+  "validation_status": "standard_training_baseline"
+}

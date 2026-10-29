@@ -1,0 +1,6 @@
+seed,checkpoint,task,total_bits,changed_bits,pairing_seed,intervention,v_propagation,y_counterfactual,v_mediation
+0,checkpoints\3hop_L3_siit_k1_seed0.pt,3hop,16000,3843,123,swap_u_L0_restore_v_L1,1.0,1.0,1.0
+1,checkpoints\3hop_L3_siit_k1_seed1.pt,3hop,16000,3843,123,swap_u_L0_restore_v_L1,1.0,1.0,1.0
+2,checkpoints\3hop_L3_siit_k1_seed2.pt,3hop,16000,3843,123,swap_u_L0_restore_v_L1,1.0,1.0,1.0
+3,checkpoints\3hop_L3_siit_k1_seed3.pt,3hop,16000,3843,123,swap_u_L0_restore_v_L1,1.0,1.0,1.0
+4,checkpoints\3hop_L3_siit_k1_seed4.pt,3hop,16000,3843,123,swap_u_L0_restore_v_L1,1.0,1.0,1.0

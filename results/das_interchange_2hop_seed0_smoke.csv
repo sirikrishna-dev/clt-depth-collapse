@@ -1,0 +1,6 @@
+ckpt,layer,hyp,k,acc_all,acc_flip,n_flip
+checkpoints/2hop_L2_seed0.pt,0,u,4,0.8362500071525574,0.424264520406723,4113
+checkpoints/2hop_L2_seed0.pt,0,a,4,0.7858750224113464,0.24450619518756866,3959
+checkpoints/2hop_L2_seed0.pt,0,b,4,0.7817500233650208,0.2859640419483185,4004
+checkpoints/2hop_L2_seed0.pt,0,c,4,0.8684999942779541,0.7476070523262024,3970
+checkpoints/2hop_L2_seed0.pt,0,y,4,1.0,1.0,6028

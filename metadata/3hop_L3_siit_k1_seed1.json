@@ -1,0 +1,51 @@
+{
+  "model_id": "3hop_L3_siit_k1_seed1",
+  "source": "siit_trained_transformer",
+  "task": "3hop",
+  "hop_depth": 3,
+  "layers": 3,
+  "seed": 1,
+  "checkpoint": "checkpoints\\3hop_L3_siit_k1_seed1.pt",
+  "test_bit_accuracy": 1.0,
+  "test_exact_vector_accuracy": 1.0,
+  "intermediates": {
+    "u": {
+      "definition": "XOR(a,b)",
+      "location": "after encoder block 0, hidden dims [0:1) per bit token",
+      "how_placed": "interchange-intervention training"
+    },
+    "v": {
+      "definition": "AND(u,c)",
+      "location": "after encoder block 1, hidden dims [0:1) per bit token",
+      "how_placed": "interchange-intervention training"
+    }
+  },
+  "training_interchange_check": {
+    "u_L0": {
+      "iia_random_pairs": 1.0,
+      "iia_decoupled": 1.0,
+      "control_other_coords_decoupled": 0.0
+    },
+    "v_L1": {
+      "iia_random_pairs": 1.0,
+      "iia_decoupled": 0.8992042541503906,
+      "control_other_coords_decoupled": 0.0
+    }
+  },
+  "validated": true,
+  "validation_todo": "run das_interchange.py --decouple on this checkpoint; set validated only if u beats the donor-y baseline",
+  "causal_chain_validation": {
+    "status": "passed",
+    "results_file": "results/3hop_causal_chain_validation.csv",
+    "changed_bits": 3843,
+    "pairing_seed": 123,
+    "metrics": {
+      "v_propagation": 1.0,
+      "y_counterfactual": 1.0,
+      "v_mediation": 1.0
+    },
+    "interpretation": "Intervention-based evidence that v mediates the tested causal effect of u on the final output."
+  },
+  "validation_status": "passed_causal_chain_protocol",
+  "exclusive_depth_verified": false
+}
