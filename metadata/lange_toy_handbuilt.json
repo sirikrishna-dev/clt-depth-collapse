@@ -1,0 +1,44 @@
+{
+  "model_id": "lange_toy_handbuilt",
+  "source": "hand_built_circuit",
+  "task": "(a XOR b) AND (c XOR d), inputs in {+1,-1}",
+  "hop_depth": 2,
+  "layers": 2,
+  "seed": null,
+  "architecture": "2-layer MLP-only residual network, 9-dimensional residual stream (no attention)",
+  "residual_dim": 9,
+  "hidden_dims": [
+    4,
+    1
+  ],
+  "checkpoint": "checkpoints/lange_toy_handbuilt.pt",
+  "weights_numpy": "checkpoints/lange_toy_handbuilt.npz",
+  "intermediates": {
+    "e,f,g,h": {
+      "definition": "ReLU(a-b-1), ReLU(b-a-1), ReLU(c-d-1), ReLU(d-c-1)",
+      "location": "MLP 0 output, residual dimensions 4..7"
+    },
+    "i": {
+      "definition": "ReLU(e+f+g+h-1)",
+      "location": "MLP 1 output, residual dimension 8"
+    }
+  },
+  "n_inputs": 16,
+  "validated": true,
+  "validation_scope": "exhaustive truth table and known interventions on a hand-built circuit",
+  "validation": {
+    "inputs_tested": 16,
+    "true_outputs": 4,
+    "exact_accuracy": 1.0,
+    "intermediate_feature_checks_passed": true,
+    "intermediate_ablation_changed_outputs": 4,
+    "intermediate_ablation_output_all_zero": true,
+    "all_intermediate_swap_pairs_tested": 256,
+    "all_intermediate_swap_pairs_passed": true
+  },
+  "provenance": "Weights reconstructed from Lange et al. (2026) written description, not author code/checkpoint",
+  "source_url": "https://www.lesswrong.com/posts/6CS2NDmoLCFcEJMor/cross-layer-transcoders-are-incentivized-to-learn-unfaithful",
+  "activations_file": "data/lange_toy_activations.npz",
+  "truth_table_file": "data/lange_toy_truth_table.csv",
+  "zoo_manifest_integration": "pending architecture-specific loader/schema support"
+}
