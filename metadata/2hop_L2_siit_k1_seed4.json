@@ -1,0 +1,33 @@
+{
+  "model_id": "2hop_L2_siit_k1_seed4",
+  "source": "siit_trained_transformer",
+  "task": "2hop",
+  "hop_depth": 2,
+  "layers": 2,
+  "seed": 4,
+  "checkpoint": "checkpoints\\2hop_L2_siit_k1_seed4.pt",
+  "test_bit_accuracy": 1.0,
+  "test_exact_vector_accuracy": 1.0,
+  "intermediates": {
+    "u": {
+      "definition": "XOR(a,b)",
+      "location": "after encoder block 0, hidden dims [0:1) per bit token",
+      "how_placed": "interchange-intervention training"
+    }
+  },
+  "training_interchange_check": {
+    "u_L0": {
+      "iia_random_pairs": 1.0,
+      "iia_decoupled": 1.0,
+      "control_other_coords_decoupled": 0.0
+    }
+  },
+  "validated": true,
+  "das_decoupled_k1": {
+    "u": 1.0,
+    "a": 0.318,
+    "b": 0.327,
+    "c": 1.0,
+    "y": 1.0
+  }
+}
