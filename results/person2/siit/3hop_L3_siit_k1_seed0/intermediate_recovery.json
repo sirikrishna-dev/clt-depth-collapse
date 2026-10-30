@@ -1,0 +1,3317 @@
+{
+  "task": "3hop",
+  "n_layers": 3,
+  "base_checkpoint": "C:\\Users\\rushm\\Downloads\\clt-depth-collapse-feature-person1-siit-causal-validation\\clt-depth-collapse-feature-person1-siit-causal-validation\\checkpoints\\3hop_L3_siit_k1_seed0.pt",
+  "base_seed": 0,
+  "siit_sites": [
+    {
+      "var": "u",
+      "layer": 0,
+      "start": 0,
+      "end": 1
+    },
+    {
+      "var": "v",
+      "layer": 1,
+      "start": 0,
+      "end": 1
+    }
+  ],
+  "original_model_test_bit_accuracy": 1.0,
+  "original_model_test_exact_vector_accuracy": 1.0,
+  "train_examples": 5000,
+  "validation_examples": 1000,
+  "test_examples": 1000,
+  "replacement_models": {
+    "plt": {
+      "checkpoint": "results\\person2\\siit\\3hop_L3_siit_k1_seed0\\3hop_plt_seed0_features128_span1.pt",
+      "write_span": 1,
+      "validation_relative_l2": 0.018318817630920175
+    },
+    "clt": {
+      "checkpoint": "results\\person2\\siit\\3hop_L3_siit_k1_seed0\\3hop_clt_seed0_features128_span3.pt",
+      "write_span": 3,
+      "validation_relative_l2": 0.019898493375092797
+    }
+  },
+  "results": [
+    {
+      "variable": "u",
+      "representation": "siit_site_u_L0",
+      "kind": "siit_site",
+      "layer": 0,
+      "designated_layer": true,
+      "n_dims_per_token": 1,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.4953125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.503
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.479
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.487
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.484
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.483
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.507
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.528
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.508
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.51
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.477
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.492
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.498
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.473
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.524
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.502
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.47
+        }
+      ]
+    },
+    {
+      "variable": "u",
+      "representation": "mlp_input_L0",
+      "kind": "control_mlp_input",
+      "layer": 0,
+      "designated_layer": true,
+      "n_dims_per_token": 64,
+      "mean_validation_accuracy": 0.6356249999999999,
+      "mean_test_accuracy": 0.6299375,
+      "mean_test_f1": 0.6333280284702677,
+      "mean_test_majority_baseline_accuracy": 0.4953125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 0.639,
+          "test_accuracy": 0.628,
+          "test_f1": 0.6416184971098265,
+          "test_majority_baseline_accuracy": 0.503
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 0.625,
+          "test_accuracy": 0.637,
+          "test_f1": 0.6322188449848024,
+          "test_majority_baseline_accuracy": 0.479
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 0.663,
+          "test_accuracy": 0.661,
+          "test_f1": 0.6755980861244019,
+          "test_majority_baseline_accuracy": 0.487
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 0.638,
+          "test_accuracy": 0.605,
+          "test_f1": 0.5973496432212029,
+          "test_majority_baseline_accuracy": 0.484
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 0.65,
+          "test_accuracy": 0.653,
+          "test_f1": 0.6526526526526526,
+          "test_majority_baseline_accuracy": 0.483
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 0.612,
+          "test_accuracy": 0.616,
+          "test_f1": 0.625,
+          "test_majority_baseline_accuracy": 0.507
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 0.623,
+          "test_accuracy": 0.62,
+          "test_f1": 0.6339113680154143,
+          "test_majority_baseline_accuracy": 0.528
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 0.623,
+          "test_accuracy": 0.651,
+          "test_f1": 0.647118301314459,
+          "test_majority_baseline_accuracy": 0.508
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 0.651,
+          "test_accuracy": 0.625,
+          "test_f1": 0.629812438302073,
+          "test_majority_baseline_accuracy": 0.51
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 0.674,
+          "test_accuracy": 0.637,
+          "test_f1": 0.638085742771685,
+          "test_majority_baseline_accuracy": 0.477
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 0.635,
+          "test_accuracy": 0.617,
+          "test_f1": 0.630665380906461,
+          "test_majority_baseline_accuracy": 0.492
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 0.614,
+          "test_accuracy": 0.629,
+          "test_f1": 0.6256306760847629,
+          "test_majority_baseline_accuracy": 0.498
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 0.644,
+          "test_accuracy": 0.586,
+          "test_f1": 0.6086956521739131,
+          "test_majority_baseline_accuracy": 0.473
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 0.644,
+          "test_accuracy": 0.605,
+          "test_f1": 0.5940390544707091,
+          "test_majority_baseline_accuracy": 0.524
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 0.614,
+          "test_accuracy": 0.649,
+          "test_f1": 0.6528189910979229,
+          "test_majority_baseline_accuracy": 0.502
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 0.621,
+          "test_accuracy": 0.66,
+          "test_f1": 0.6480331262939959,
+          "test_majority_baseline_accuracy": 0.47
+        }
+      ]
+    },
+    {
+      "variable": "u",
+      "representation": "residual_after_block_L0",
+      "kind": "control_residual",
+      "layer": 0,
+      "designated_layer": true,
+      "n_dims_per_token": 64,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.4953125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.503
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.479
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.487
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.484
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.483
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.507
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.528
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.508
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.51
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.477
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.492
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.498
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.473
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.524
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.502
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.47
+        }
+      ]
+    },
+    {
+      "variable": "u",
+      "representation": "mlp_input_L1",
+      "kind": "control_mlp_input",
+      "layer": 1,
+      "designated_layer": false,
+      "n_dims_per_token": 64,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.4953125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.503
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.479
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.487
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.484
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.483
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.507
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.528
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.508
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.51
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.477
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.492
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.498
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.473
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.524
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.502
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.47
+        }
+      ]
+    },
+    {
+      "variable": "u",
+      "representation": "residual_after_block_L1",
+      "kind": "control_residual",
+      "layer": 1,
+      "designated_layer": false,
+      "n_dims_per_token": 64,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.4953125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.503
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.479
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.487
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.484
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.483
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.507
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.528
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.508
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.51
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.477
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.492
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.498
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.473
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.524
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.502
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.47
+        }
+      ]
+    },
+    {
+      "variable": "u",
+      "representation": "mlp_input_L2",
+      "kind": "control_mlp_input",
+      "layer": 2,
+      "designated_layer": false,
+      "n_dims_per_token": 64,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.4953125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.503
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.479
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.487
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.484
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.483
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.507
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.528
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.508
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.51
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.477
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.492
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.498
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.473
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.524
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.502
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.47
+        }
+      ]
+    },
+    {
+      "variable": "u",
+      "representation": "residual_after_block_L2",
+      "kind": "control_residual",
+      "layer": 2,
+      "designated_layer": false,
+      "n_dims_per_token": 64,
+      "mean_validation_accuracy": 0.9998125,
+      "mean_test_accuracy": 0.9999375,
+      "mean_test_f1": 0.9999407582938389,
+      "mean_test_majority_baseline_accuracy": 0.4953125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.503
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.479
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.487
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.484
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.483
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 0.999,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.507
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 0.999,
+          "test_f1": 0.9990521327014218,
+          "test_majority_baseline_accuracy": 0.528
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.508
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.51
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.477
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.492
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.498
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 0.999,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.473
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 0.999,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.524
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.502
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.47
+        }
+      ]
+    },
+    {
+      "variable": "u",
+      "representation": "plt_L0",
+      "kind": "plt",
+      "layer": 0,
+      "designated_layer": true,
+      "n_dims_per_token": 128,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.4953125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.503
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.479
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.487
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.484
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.483
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.507
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.528
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.508
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.51
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.477
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.492
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.498
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.473
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.524
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.502
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.47
+        }
+      ]
+    },
+    {
+      "variable": "u",
+      "representation": "plt_L1",
+      "kind": "plt",
+      "layer": 1,
+      "designated_layer": false,
+      "n_dims_per_token": 128,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.4953125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.503
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.479
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.487
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.484
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.483
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.507
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.528
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.508
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.51
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.477
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.492
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.498
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.473
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.524
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.502
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.47
+        }
+      ]
+    },
+    {
+      "variable": "u",
+      "representation": "plt_L2",
+      "kind": "plt",
+      "layer": 2,
+      "designated_layer": false,
+      "n_dims_per_token": 128,
+      "mean_validation_accuracy": 0.9998750000000001,
+      "mean_test_accuracy": 0.9998125,
+      "mean_test_f1": 0.9998070474688676,
+      "mean_test_majority_baseline_accuracy": 0.4953125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 0.999,
+          "test_f1": 0.998992950654582,
+          "test_majority_baseline_accuracy": 0.503
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.479
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.487
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 0.999,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.484
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.483
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 0.999,
+          "test_accuracy": 0.999,
+          "test_f1": 0.9989847715736041,
+          "test_majority_baseline_accuracy": 0.507
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.528
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.508
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.51
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.477
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.492
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.498
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.473
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.524
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.502
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 0.999,
+          "test_f1": 0.9989350372736954,
+          "test_majority_baseline_accuracy": 0.47
+        }
+      ]
+    },
+    {
+      "variable": "u",
+      "representation": "clt_L0",
+      "kind": "clt",
+      "layer": 0,
+      "designated_layer": true,
+      "n_dims_per_token": 128,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.4953125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.503
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.479
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.487
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.484
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.483
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.507
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.528
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.508
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.51
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.477
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.492
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.498
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.473
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.524
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.502
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.47
+        }
+      ]
+    },
+    {
+      "variable": "u",
+      "representation": "clt_L1",
+      "kind": "clt",
+      "layer": 1,
+      "designated_layer": false,
+      "n_dims_per_token": 128,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.4953125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.503
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.479
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.487
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.484
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.483
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.507
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.528
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.508
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.51
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.477
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.492
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.498
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.473
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.524
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.502
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.47
+        }
+      ]
+    },
+    {
+      "variable": "u",
+      "representation": "clt_L2",
+      "kind": "clt",
+      "layer": 2,
+      "designated_layer": false,
+      "n_dims_per_token": 128,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 0.9999375,
+      "mean_test_f1": 0.999934279705573,
+      "mean_test_majority_baseline_accuracy": 0.4953125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.503
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.479
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.487
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.484
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.483
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.507
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.528
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.508
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.51
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.477
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.492
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.498
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.473
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 0.999,
+          "test_f1": 0.9989484752891693,
+          "test_majority_baseline_accuracy": 0.524
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.502
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.47
+        }
+      ]
+    },
+    {
+      "variable": "v",
+      "representation": "siit_site_v_L1",
+      "kind": "siit_site",
+      "layer": 1,
+      "designated_layer": true,
+      "n_dims_per_token": 1,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.755125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.769
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.757
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.747
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.76
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.765
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.756
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.742
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.768
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.734
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.732
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.774
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.762
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.763
+        }
+      ]
+    },
+    {
+      "variable": "v",
+      "representation": "mlp_input_L0",
+      "kind": "control_mlp_input",
+      "layer": 0,
+      "designated_layer": false,
+      "n_dims_per_token": 64,
+      "mean_validation_accuracy": 0.994625,
+      "mean_test_accuracy": 0.9934999999999999,
+      "mean_test_f1": 0.9869239096581621,
+      "mean_test_majority_baseline_accuracy": 0.755125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 0.993,
+          "test_accuracy": 0.996,
+          "test_f1": 0.9914163090128756,
+          "test_majority_baseline_accuracy": 0.769
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 0.993,
+          "test_accuracy": 0.99,
+          "test_f1": 0.9798387096774194,
+          "test_majority_baseline_accuracy": 0.757
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 0.995,
+          "test_accuracy": 0.99,
+          "test_f1": 0.9806201550387597,
+          "test_majority_baseline_accuracy": 0.747
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 0.991,
+          "test_accuracy": 0.99,
+          "test_f1": 0.9795918367346939,
+          "test_majority_baseline_accuracy": 0.76
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 0.993,
+          "test_accuracy": 0.991,
+          "test_f1": 0.9812108559498957,
+          "test_majority_baseline_accuracy": 0.765
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 0.997,
+          "test_accuracy": 0.989,
+          "test_f1": 0.9779559118236473,
+          "test_majority_baseline_accuracy": 0.756
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 0.998,
+          "test_accuracy": 0.994,
+          "test_f1": 0.9885057471264368,
+          "test_majority_baseline_accuracy": 0.742
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 0.994,
+          "test_accuracy": 0.995,
+          "test_f1": 0.9900596421471173,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 0.997,
+          "test_accuracy": 0.994,
+          "test_f1": 0.9880952380952381,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 0.998,
+          "test_accuracy": 0.993,
+          "test_f1": 0.9861386138613861,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 0.997,
+          "test_accuracy": 0.997,
+          "test_f1": 0.9935760171306209,
+          "test_majority_baseline_accuracy": 0.768
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 0.995,
+          "test_accuracy": 0.993,
+          "test_f1": 0.9869646182495344,
+          "test_majority_baseline_accuracy": 0.734
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 0.993,
+          "test_accuracy": 0.997,
+          "test_f1": 0.9944341372912802,
+          "test_majority_baseline_accuracy": 0.732
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 0.995,
+          "test_accuracy": 0.995,
+          "test_f1": 0.9890590809628009,
+          "test_majority_baseline_accuracy": 0.774
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 0.989,
+          "test_accuracy": 0.995,
+          "test_f1": 0.9896049896049897,
+          "test_majority_baseline_accuracy": 0.762
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 0.996,
+          "test_accuracy": 0.997,
+          "test_f1": 0.9937106918238994,
+          "test_majority_baseline_accuracy": 0.763
+        }
+      ]
+    },
+    {
+      "variable": "v",
+      "representation": "residual_after_block_L0",
+      "kind": "control_residual",
+      "layer": 0,
+      "designated_layer": false,
+      "n_dims_per_token": 64,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.755125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.769
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.757
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.747
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.76
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.765
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.756
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.742
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.768
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.734
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.732
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.774
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.762
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.763
+        }
+      ]
+    },
+    {
+      "variable": "v",
+      "representation": "mlp_input_L1",
+      "kind": "control_mlp_input",
+      "layer": 1,
+      "designated_layer": true,
+      "n_dims_per_token": 64,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.755125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.769
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.757
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.747
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.76
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.765
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.756
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.742
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.768
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.734
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.732
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.774
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.762
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.763
+        }
+      ]
+    },
+    {
+      "variable": "v",
+      "representation": "residual_after_block_L1",
+      "kind": "control_residual",
+      "layer": 1,
+      "designated_layer": true,
+      "n_dims_per_token": 64,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.755125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.769
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.757
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.747
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.76
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.765
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.756
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.742
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.768
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.734
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.732
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.774
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.762
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.763
+        }
+      ]
+    },
+    {
+      "variable": "v",
+      "representation": "mlp_input_L2",
+      "kind": "control_mlp_input",
+      "layer": 2,
+      "designated_layer": false,
+      "n_dims_per_token": 64,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.755125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.769
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.757
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.747
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.76
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.765
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.756
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.742
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.768
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.734
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.732
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.774
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.762
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.763
+        }
+      ]
+    },
+    {
+      "variable": "v",
+      "representation": "residual_after_block_L2",
+      "kind": "control_residual",
+      "layer": 2,
+      "designated_layer": false,
+      "n_dims_per_token": 64,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.755125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.769
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.757
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.747
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.76
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.765
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.756
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.742
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.768
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.734
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.732
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.774
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.762
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.763
+        }
+      ]
+    },
+    {
+      "variable": "v",
+      "representation": "plt_L0",
+      "kind": "plt",
+      "layer": 0,
+      "designated_layer": false,
+      "n_dims_per_token": 128,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.755125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.769
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.757
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.747
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.76
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.765
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.756
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.742
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.768
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.734
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.732
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.774
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.762
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.763
+        }
+      ]
+    },
+    {
+      "variable": "v",
+      "representation": "plt_L1",
+      "kind": "plt",
+      "layer": 1,
+      "designated_layer": true,
+      "n_dims_per_token": 128,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.755125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.769
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.757
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.747
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.76
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.765
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.756
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.742
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.768
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.734
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.732
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.774
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.762
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.763
+        }
+      ]
+    },
+    {
+      "variable": "v",
+      "representation": "plt_L2",
+      "kind": "plt",
+      "layer": 2,
+      "designated_layer": false,
+      "n_dims_per_token": 128,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.755125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.769
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.757
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.747
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.76
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.765
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.756
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.742
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.768
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.734
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.732
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.774
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.762
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.763
+        }
+      ]
+    },
+    {
+      "variable": "v",
+      "representation": "clt_L0",
+      "kind": "clt",
+      "layer": 0,
+      "designated_layer": false,
+      "n_dims_per_token": 128,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.755125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.769
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.757
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.747
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.76
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.765
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.756
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.742
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.768
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.734
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.732
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.774
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.762
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.763
+        }
+      ]
+    },
+    {
+      "variable": "v",
+      "representation": "clt_L1",
+      "kind": "clt",
+      "layer": 1,
+      "designated_layer": true,
+      "n_dims_per_token": 128,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.755125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.769
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.757
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.747
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.76
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.765
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.756
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.742
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.768
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.734
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.732
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.774
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.762
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.763
+        }
+      ]
+    },
+    {
+      "variable": "v",
+      "representation": "clt_L2",
+      "kind": "clt",
+      "layer": 2,
+      "designated_layer": false,
+      "n_dims_per_token": 128,
+      "mean_validation_accuracy": 1.0,
+      "mean_test_accuracy": 1.0,
+      "mean_test_f1": 1.0,
+      "mean_test_majority_baseline_accuracy": 0.755125,
+      "per_bit": [
+        {
+          "bit": 0,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.769
+        },
+        {
+          "bit": 1,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.757
+        },
+        {
+          "bit": 2,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.747
+        },
+        {
+          "bit": 3,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.76
+        },
+        {
+          "bit": 4,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.765
+        },
+        {
+          "bit": 5,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.756
+        },
+        {
+          "bit": 6,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.742
+        },
+        {
+          "bit": 7,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 8,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 9,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.751
+        },
+        {
+          "bit": 10,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.768
+        },
+        {
+          "bit": 11,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.734
+        },
+        {
+          "bit": 12,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.732
+        },
+        {
+          "bit": 13,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.774
+        },
+        {
+          "bit": 14,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.762
+        },
+        {
+          "bit": 15,
+          "validation_accuracy": 1.0,
+          "test_accuracy": 1.0,
+          "test_f1": 1.0,
+          "test_majority_baseline_accuracy": 0.763
+        }
+      ]
+    }
+  ],
+  "interpretation_warning": "Probes are fitted on train only. High probe accuracy shows a variable is linearly decodable; it does not show a feature is causally faithful or that any single feature implements the variable. Compare against the control rows and the majority baseline.",
+  "model_id": "3hop_L3_siit_k1_seed0"
+}
