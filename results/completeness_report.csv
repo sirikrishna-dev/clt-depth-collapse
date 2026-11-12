@@ -1,0 +1,13 @@
+task,base_seed,model_type,base_checkpoint,completeness_status
+2hop,0,plt,checkpoints/2hop_L2_seed0.pt,PRESENT
+2hop,0,clt,checkpoints/2hop_L2_seed0.pt,PRESENT
+2hop,1,plt,checkpoints/2hop_L2_seed1.pt,PRESENT
+2hop,1,clt,checkpoints/2hop_L2_seed1.pt,PRESENT
+2hop,2,plt,checkpoints/2hop_L2_seed2.pt,PRESENT
+2hop,2,clt,checkpoints/2hop_L2_seed2.pt,PRESENT
+3hop,0,plt,checkpoints/3hop_L2_seed0.pt,PRESENT
+3hop,0,clt,checkpoints/3hop_L2_seed0.pt,PRESENT
+3hop,1,plt,checkpoints/3hop_L2_seed1.pt,PRESENT
+3hop,1,clt,checkpoints/3hop_L2_seed1.pt,PRESENT
+3hop,2,plt,checkpoints/3hop_L2_seed2.pt,PRESENT
+3hop,2,clt,checkpoints/3hop_L2_seed2.pt,PRESENT

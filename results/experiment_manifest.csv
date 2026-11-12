@@ -1,0 +1,13 @@
+experiment_id,task,model_type,seed,sparsity,status,notes
+EXP-001,2hop,PLT,0,,planned_not_validated,"Confirm model availability, sparsity settings, and validation criteria before running."
+EXP-002,2hop,PLT,1,,planned_not_validated,"Confirm model availability, sparsity settings, and validation criteria before running."
+EXP-003,2hop,PLT,2,,planned_not_validated,"Confirm model availability, sparsity settings, and validation criteria before running."
+EXP-004,2hop,CLT,0,,planned_not_validated,"Confirm model availability, sparsity settings, and validation criteria before running."
+EXP-005,2hop,CLT,1,,planned_not_validated,"Confirm model availability, sparsity settings, and validation criteria before running."
+EXP-006,2hop,CLT,2,,planned_not_validated,"Confirm model availability, sparsity settings, and validation criteria before running."
+EXP-007,3hop,PLT,0,,planned_not_validated,"Confirm model availability, sparsity settings, and validation criteria before running."
+EXP-008,3hop,PLT,1,,planned_not_validated,"Confirm model availability, sparsity settings, and validation criteria before running."
+EXP-009,3hop,PLT,2,,planned_not_validated,"Confirm model availability, sparsity settings, and validation criteria before running."
+EXP-010,3hop,CLT,0,,planned_not_validated,"Confirm model availability, sparsity settings, and validation criteria before running."
+EXP-011,3hop,CLT,1,,planned_not_validated,"Confirm model availability, sparsity settings, and validation criteria before running."
+EXP-012,3hop,CLT,2,,planned_not_validated,"Confirm model availability, sparsity settings, and validation criteria before running."
