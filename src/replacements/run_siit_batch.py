@@ -94,27 +94,57 @@ def aggregate(out_root: Path, tolerance: float) -> None:
         write_markdown_summary(out_root, recovery)
 
 
+
 def write_markdown_summary(out_root: Path, recovery: pd.DataFrame) -> None:
     grouped = (
-        recovery.groupby(["task", "variable", "representation", "kind", "layer", "designated_layer"], as_index=False)
-        .agg(seeds=("siit_seed", "nunique"),
-             test_acc_mean=("mean_test_accuracy", "mean"),
-             test_acc_min=("mean_test_accuracy", "min"),
-             majority=("majority_baseline_test_accuracy", "mean"))
+        recovery.groupby(
+            ["task", "variable", "representation", "kind", "layer", "designated_layer"],
+            as_index=False
+        )
+        .agg(
+            seeds=("siit_seed", "nunique"),
+            test_acc_mean=("mean_test_accuracy", "mean"),
+            test_acc_min=("mean_test_accuracy", "min"),
+            majority=("majority_baseline_test_accuracy", "mean"),
+            shuffled_acc=("shuffled_test_accuracy", "mean"),
+            shuffled_p=("shuffled_empirical_p_value", "mean"),
+        )
         .sort_values(["task", "variable", "layer", "kind"])
     )
-    lines = ["# SIIT recovery summary (auto-generated)", "",
-             "Mean per-bit linear-probe test accuracy across SIIT seeds. `majority` is the accuracy of ignoring the features.",
-             "`designated` marks the layer where Person 1 trained the variable to live.", ""]
+
+    lines = [
+        "# SIIT recovery summary (auto-generated)",
+        "",
+        "Mean per-bit linear-probe test accuracy across SIIT seeds.",
+        "`majority` is the majority-class baseline.",
+        "`shuffled` is the mean test accuracy after training with shuffled labels.",
+        "`shuffled p` is the mean empirical p-value across SIIT seeds.",
+        "",
+    ]
+
     for (task, var), g in grouped.groupby(["task", "variable"]):
-        lines += [f"## {task} - variable `{var}`", "",
-                  "| representation | kind | designated | seeds | test acc (mean) | test acc (min) | majority |",
-                  "|---|---|:-:|--:|--:|--:|--:|"]
+        lines += [
+            f"## {task} - variable `{var}`",
+            "",
+            "| representation | kind | designated | seeds | test acc | majority | shuffled acc | shuffled p |",
+            "|---|---|:-:|--:|--:|--:|--:|--:|",
+        ]
+
         for _, r in g.iterrows():
-            lines.append(f"| {r.representation} | {r.kind} | {'yes' if r.designated_layer else ''} | {r.seeds} "
-                         f"| {r.test_acc_mean:.4f} | {r.test_acc_min:.4f} | {r.majority:.4f} |")
+            lines.append(
+                f"| {r.representation} | {r.kind} "
+                f"| {'yes' if r.designated_layer else ''} "
+                f"| {r.seeds} "
+                f"| {r.test_acc_mean:.4f} "
+                f"| {r.majority:.4f} "
+                f"| {r.shuffled_acc:.4f} "
+                f"| {r.shuffled_p:.4f} |"
+            )
+
         lines.append("")
+
     (out_root / "SIIT_SUMMARY.md").write_text("\n".join(lines))
+
 
 
 def main():
