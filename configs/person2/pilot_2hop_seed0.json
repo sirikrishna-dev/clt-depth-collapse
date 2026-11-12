@@ -1,0 +1,14 @@
+{
+  "task": "2hop",
+  "base_checkpoint": "checkpoints/2hop_L2_seed0.pt",
+  "data": "data/boolean_2hop_improved.csv",
+  "features_per_layer": 128,
+  "sparsity_coefficient": 0.0001,
+  "epochs": 20,
+  "batch_size": 128,
+  "learning_rate": 0.001,
+  "validation_split": "validation",
+  "test_split": "test",
+  "fidelity_matching_tolerance_relative_l2": 0.02,
+  "fidelity_matching_tolerance_status": "PROVISIONAL_REQUIRES_TEAM_AGREEMENT"
+}

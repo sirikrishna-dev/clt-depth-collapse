@@ -1,0 +1,2 @@
+task,base_checkpoint,plt_run_id,clt_run_id,plt_validation_relative_l2,clt_validation_relative_l2,absolute_gap,tolerance,status
+2hop,C:\Users\SIRI KRISHNA C.R\Downloads\clt-depth-collapse-person2-agreed-interface\person2_mlp_update\checkpoints\2hop_L2_seed1.pt,2hop_plt_seed0_features128_span1,2hop_clt_seed0_features128_span2,0.012860655354109905,0.013508809401542215,0.0006481540474323096,0.02,PROVISIONAL_MATCH

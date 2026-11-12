@@ -1,0 +1,1101 @@
+{
+  "task": "2hop",
+  "intermediate": "u = XOR(a, b)",
+  "train_examples": 5000,
+  "validation_examples": 1000,
+  "test_examples": 1000,
+  "original_model_test_bit_accuracy": 1.0,
+  "siit_hidden_dimension_0_probe_by_bit": [
+    {
+      "bit": 0,
+      "validation": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      },
+      "test": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      }
+    },
+    {
+      "bit": 1,
+      "validation": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      },
+      "test": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      }
+    },
+    {
+      "bit": 2,
+      "validation": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      },
+      "test": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      }
+    },
+    {
+      "bit": 3,
+      "validation": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      },
+      "test": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      }
+    },
+    {
+      "bit": 4,
+      "validation": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      },
+      "test": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      }
+    },
+    {
+      "bit": 5,
+      "validation": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      },
+      "test": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      }
+    },
+    {
+      "bit": 6,
+      "validation": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      },
+      "test": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      }
+    },
+    {
+      "bit": 7,
+      "validation": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      },
+      "test": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      }
+    },
+    {
+      "bit": 8,
+      "validation": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      },
+      "test": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      }
+    },
+    {
+      "bit": 9,
+      "validation": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      },
+      "test": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      }
+    },
+    {
+      "bit": 10,
+      "validation": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      },
+      "test": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      }
+    },
+    {
+      "bit": 11,
+      "validation": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      },
+      "test": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      }
+    },
+    {
+      "bit": 12,
+      "validation": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      },
+      "test": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      }
+    },
+    {
+      "bit": 13,
+      "validation": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      },
+      "test": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      }
+    },
+    {
+      "bit": 14,
+      "validation": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      },
+      "test": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      }
+    },
+    {
+      "bit": 15,
+      "validation": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      },
+      "test": {
+        "accuracy": 1.0,
+        "f1": 1.0,
+        "evaluation_examples": 1000
+      }
+    }
+  ],
+  "replacement_models": {
+    "plt": {
+      "checkpoint": "results\\person2\\2hop_plt_seed0_features128_span1.pt",
+      "base_checkpoint": "C:\\Users\\rushm\\Downloads\\clt-depth-collapse-feature-person1-siit-causal-validation\\clt-depth-collapse-feature-person1-siit-causal-validation\\checkpoints\\2hop_L2_siit_k1_seed0.pt",
+      "layers": [
+        {
+          "layer": 0,
+          "mean_validation_accuracy": 1.0,
+          "mean_test_accuracy": 1.0,
+          "mean_validation_f1": 1.0,
+          "mean_test_f1": 1.0,
+          "per_bit": [
+            {
+              "bit": 0,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 1,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 2,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 3,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 4,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 5,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 6,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 7,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 8,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 9,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 10,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 11,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 12,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 13,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 14,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 15,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            }
+          ]
+        },
+        {
+          "layer": 1,
+          "mean_validation_accuracy": 1.0,
+          "mean_test_accuracy": 1.0,
+          "mean_validation_f1": 1.0,
+          "mean_test_f1": 1.0,
+          "per_bit": [
+            {
+              "bit": 0,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 1,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 2,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 3,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 4,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 5,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 6,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 7,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 8,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 9,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 10,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 11,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 12,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 13,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 14,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 15,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "clt": {
+      "checkpoint": "results\\person2\\2hop_clt_seed0_features128_span2.pt",
+      "base_checkpoint": "C:\\Users\\rushm\\Downloads\\clt-depth-collapse-feature-person1-siit-causal-validation\\clt-depth-collapse-feature-person1-siit-causal-validation\\checkpoints\\2hop_L2_siit_k1_seed0.pt",
+      "layers": [
+        {
+          "layer": 0,
+          "mean_validation_accuracy": 1.0,
+          "mean_test_accuracy": 1.0,
+          "mean_validation_f1": 1.0,
+          "mean_test_f1": 1.0,
+          "per_bit": [
+            {
+              "bit": 0,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 1,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 2,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 3,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 4,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 5,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 6,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 7,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 8,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 9,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 10,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 11,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 12,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 13,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 14,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 15,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            }
+          ]
+        },
+        {
+          "layer": 1,
+          "mean_validation_accuracy": 1.0,
+          "mean_test_accuracy": 1.0,
+          "mean_validation_f1": 1.0,
+          "mean_test_f1": 1.0,
+          "per_bit": [
+            {
+              "bit": 0,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 1,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 2,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 3,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 4,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 5,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 6,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 7,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 8,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 9,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 10,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 11,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 12,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 13,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 14,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            },
+            {
+              "bit": 15,
+              "validation": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              },
+              "test": {
+                "accuracy": 1.0,
+                "f1": 1.0,
+                "evaluation_examples": 1000
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "interpretation_warning": "Probes were fitted on the training split. Validation and test splits were not used to fit the probes. Predictability alone does not prove causal faithfulness or that a feature represents the true XOR mechanism."
+}

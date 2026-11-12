@@ -1,0 +1,52 @@
+{
+  "run_id": "3hop_plt_seed0_features128_span1",
+  "status": "completed",
+  "model_type": "plt",
+  "architecture_label": "experimental_sparse_transcoder_baseline",
+  "task": "3hop",
+  "ground_truth_hop_depth": 3,
+  "base_checkpoint": "C:\\Users\\rushm\\Downloads\\clt-depth-collapse-feature-person1-siit-causal-validation\\clt-depth-collapse-feature-person1-siit-causal-validation\\checkpoints\\3hop_L3_siit_k1_seed2.pt",
+  "base_seed": 2,
+  "seed": 0,
+  "n_layers": 3,
+  "d_model": 64,
+  "n_features_per_layer": 128,
+  "sparsity_coefficient": 0.0001,
+  "write_span": 1,
+  "epochs": 20,
+  "batch_size": 128,
+  "learning_rate": 0.001,
+  "train_examples": 5000,
+  "validation_examples": 1000,
+  "test_examples": 1000,
+  "activation_target": "MLP write: encoder.layers.{i}.linear2 output reconstructed from encoder.layers.{i}.linear1 input",
+  "replacement_interface": {
+    "primary_target": "mlp_input_to_mlp_write",
+    "mlp_input_hook": "encoder.layers.{i}.linear1 pre-forward input (after norm2 for norm_first=False)",
+    "mlp_write_hook": "encoder.layers.{i}.linear2 forward output (before dropout2 and residual addition; eval mode disables dropout)",
+    "diagnostic_block_input_hook": "encoder.layers.{i} forward pre-hook input (residual stream entering block)",
+    "diagnostic_block_output_hook": "encoder.layers.{i} forward output (residual stream leaving block)",
+    "block_boundary_hooks_used_for_training_targets": false
+  },
+  "graph_handoff": {
+    "feature_ids_convention": "replacement_type_layer_index_feature_index",
+    "feature_activations_saved_in_checkpoint": false,
+    "decoder_weights_are_attribution_edges": false,
+    "note": "Person 3 must define/validate the attribution method before converting transcoder weights or activations to graph edge weights."
+  },
+  "interpretation_caveat": "Experimental baseline; not confirmed identical to a paper/library CLT implementation. Confirm graph interface and architecture with team before scientific claims.",
+  "validation_metrics": {
+    "mse": 0.0016847746471563975,
+    "relative_l2": 0.021053859223036743,
+    "explained_variance": 0.9995561227223604,
+    "active_feature_fraction": 0.4688079357147217,
+    "mean_feature_activation": 0.5694798827171326
+  },
+  "test_metrics": {
+    "mse": 0.0015499074856440227,
+    "relative_l2": 0.02019090535619473,
+    "explained_variance": 0.9995916488812574,
+    "active_feature_fraction": 0.46849414706230164,
+    "mean_feature_activation": 0.5692538022994995
+  }
+}
