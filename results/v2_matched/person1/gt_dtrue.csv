@@ -1,0 +1,17 @@
+model_id,task,kind,layers,necessary_mlp_layers,n_necessary,attn_necessary,y_first_decodable_after_block,y_shortcut_scores,evidence,exclusive_sites,D_true,reason
+2hop_L2_seed0,2hop,baseline,2,"[0, 1]",2,[1],0,{0: 1.0},ablation+shortcut test,n/a,1,"y computed and used after block 0 (shortcut score 1.000); later MLPs necessary but carry, not compute"
+2hop_L2_seed1,2hop,baseline,2,"[0, 1]",2,[1],0,{0: 1.0},ablation+shortcut test,n/a,1,"y computed and used after block 0 (shortcut score 1.000); later MLPs necessary but carry, not compute"
+2hop_L2_seed2,2hop,baseline,2,"[0, 1]",2,[1],0,{0: 1.0},ablation+shortcut test,n/a,1,"y computed and used after block 0 (shortcut score 1.000); later MLPs necessary but carry, not compute"
+2hop_L2_siit_k1_seed0,2hop,siit,2,"[0, 1]",2,[1],0,{0: 0.0},ablation+shortcut test+interchange/chain,yes,2,no early shortcut used; all necessary MLPs compute
+2hop_L2_siit_k1_seed1,2hop,siit,2,"[0, 1]",2,[1],0,{0: 0.0},ablation+shortcut test+interchange/chain,no: ablate_mlp0_restore_u_site=0.93,2,no early shortcut used; all necessary MLPs compute
+2hop_L2_siit_k1_seed2,2hop,siit,2,"[0, 1]",2,[1],0,{0: 0.0},ablation+shortcut test+interchange/chain,yes,2,no early shortcut used; all necessary MLPs compute
+2hop_L2_siit_k1_seed3,2hop,siit,2,"[0, 1]",2,"[0, 1]",0,{0: 0.0},ablation+shortcut test+interchange/chain,yes,2,no early shortcut used; all necessary MLPs compute
+2hop_L2_siit_k1_seed4,2hop,siit,2,"[0, 1]",2,[1],0,{0: 0.0},ablation+shortcut test+interchange/chain,yes,2,no early shortcut used; all necessary MLPs compute
+3hop_L2_seed0,3hop,baseline,2,"[0, 1]",2,[],0,{0: 0.0286},ablation+shortcut test,n/a,2,no early shortcut used; all necessary MLPs compute
+3hop_L2_seed1,3hop,baseline,2,"[0, 1]",2,[1],0,{0: 0.4602},n/a,n/a,unresolved,partial shortcut: after block 0 = 0.460
+3hop_L2_seed2,3hop,baseline,2,"[0, 1]",2,[1],0,{0: 0.0146},ablation+shortcut test,n/a,2,no early shortcut used; all necessary MLPs compute
+3hop_L3_siit_k1_seed0,3hop,siit,3,"[0, 1, 2]",3,[1],0,"{0: 0.0, 1: 0.0}",ablation+shortcut test+interchange/chain,no: ablate_mlp0_restore_u_site=0.65; ablate_mlp0_restore_v_site=0.67; ablate_mlp1_restore_v_site=0.32,3,no early shortcut used; all necessary MLPs compute
+3hop_L3_siit_k1_seed1,3hop,siit,3,"[0, 1, 2]",3,[1],0,"{0: 0.0, 1: 0.0}",ablation+shortcut test+interchange/chain,no: ablate_mlp0_restore_u_site=0.76; ablate_mlp0_restore_v_site=0.77; ablate_mlp1_restore_v_site=0.28,3,no early shortcut used; all necessary MLPs compute
+3hop_L3_siit_k1_seed2,3hop,siit,3,"[0, 1, 2]",3,"[1, 2]",0,"{0: 0.0, 1: 0.0}",ablation+shortcut test+interchange/chain,no: ablate_mlp0_restore_u_site=0.82; ablate_mlp0_restore_v_site=0.81; ablate_mlp1_restore_v_site=0.40,3,no early shortcut used; all necessary MLPs compute
+3hop_L3_siit_k1_seed3,3hop,siit,3,"[0, 1, 2]",3,"[0, 1, 2]",0,"{0: 0.0, 1: 0.0}",ablation+shortcut test+interchange/chain,no: ablate_mlp0_restore_u_site=0.44; ablate_mlp0_restore_v_site=0.48; ablate_mlp1_restore_v_site=0.18,3,no early shortcut used; all necessary MLPs compute
+3hop_L3_siit_k1_seed4,3hop,siit,3,"[0, 1, 2]",3,[1],0,"{0: 0.0, 1: 0.0}",ablation+shortcut test+interchange/chain,no: ablate_mlp0_restore_u_site=0.97; ablate_mlp0_restore_v_site=0.97; ablate_mlp1_restore_v_site=0.31,3,no early shortcut used; all necessary MLPs compute
