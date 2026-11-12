@@ -1,0 +1,7 @@
+task,seed,checkpoint,clean_forward_hook_calls_layer1,clean_forward_hook_calls_layer2,clean_activation_shape_layer1,clean_activation_shape_layer2,layers_exactly_equal,layers_mean_absolute_activation_difference,layers_fraction_elements_different,clean_bit_accuracy,clean_exact_vector_accuracy
+2hop,0,2hop_L2_seed0.pt,1,1,"(1000, 16, 64)","(1000, 16, 64)",False,0.630221962928772,1.0,1.0,1.0
+2hop,1,2hop_L2_seed1.pt,1,1,"(1000, 16, 64)","(1000, 16, 64)",False,0.7276694178581238,0.9999990463256836,1.0,1.0
+2hop,2,2hop_L2_seed2.pt,1,1,"(1000, 16, 64)","(1000, 16, 64)",False,0.7565787434577942,1.0,1.0,1.0
+3hop,0,3hop_L2_seed0.pt,1,1,"(1000, 16, 64)","(1000, 16, 64)",False,0.9107010960578918,1.0,1.0,1.0
+3hop,1,3hop_L2_seed1.pt,1,1,"(1000, 16, 64)","(1000, 16, 64)",False,0.9031826257705688,1.0,1.0,1.0
+3hop,2,3hop_L2_seed2.pt,1,1,"(1000, 16, 64)","(1000, 16, 64)",False,0.96647047996521,1.0,1.0,1.0
