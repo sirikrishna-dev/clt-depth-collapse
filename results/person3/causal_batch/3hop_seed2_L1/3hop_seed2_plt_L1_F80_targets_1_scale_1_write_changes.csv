@@ -1,0 +1,2 @@
+source_layer,source_feature_id,target_layer,write_scale,mean_absolute_write_change,max_absolute_write_change
+1,80,1,1.0,0.0196833536028862,0.20850396156311035

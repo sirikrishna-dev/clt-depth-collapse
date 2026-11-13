@@ -1,0 +1,49 @@
+{
+  "experiment": "single_feature_decoder_write_intervention",
+  "model_type": "clt",
+  "source_layer": 1,
+  "source_feature_id": 28,
+  "test_examples": 1000,
+  "direct_destination_layers": [
+    1
+  ],
+  "write_scale": 1.0,
+  "feature_effects": [
+    {
+      "layer": 0,
+      "mean_absolute_feature_change": 7.157750503417049e-10,
+      "max_absolute_feature_change": 1.1920928955078125e-06,
+      "changed_feature_fraction": 4.882812731921149e-07
+    },
+    {
+      "layer": 1,
+      "mean_absolute_feature_change": 4.985462709328203e-09,
+      "max_absolute_feature_change": 2.1457672119140625e-06,
+      "changed_feature_fraction": 0.00011962890857830644
+    },
+    {
+      "layer": 2,
+      "mean_absolute_feature_change": 0.008500059135258198,
+      "max_absolute_feature_change": 0.0832476019859314,
+      "changed_feature_fraction": 0.5208002924919128
+    }
+  ],
+  "individual_feature_changes_csv": "results\\person3\\causal_batch\\3hop_seed4_L1\\3hop_seed4_clt_L1_F28_targets_1_scale_1_individual_feature_changes.csv",
+  "write_effects": [
+    {
+      "source_layer": 1,
+      "source_feature_id": 28,
+      "target_layer": 1,
+      "write_scale": 1.0,
+      "mean_absolute_write_change": 0.061746884137392044,
+      "max_absolute_write_change": 0.33080482482910156
+    }
+  ],
+  "baseline_bit_accuracy": 1.0,
+  "intervened_bit_accuracy": 1.0,
+  "prediction_change_fraction": 0.0,
+  "mean_absolute_logit_change": 0.004574817139655352,
+  "max_absolute_logit_change": 0.037078857421875,
+  "causal_interpretation": "Controlled transcoder-derived write intervention; not proof that the feature is an intrinsic causal variable of the original Transformer.",
+  "graph_edges_are_causal": false
+}

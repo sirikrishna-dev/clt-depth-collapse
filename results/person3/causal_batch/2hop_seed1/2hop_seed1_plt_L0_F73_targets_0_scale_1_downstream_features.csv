@@ -1,0 +1,3 @@
+layer,mean_absolute_feature_change,max_absolute_feature_change,changed_feature_fraction
+0,3.5487118799082396e-10,9.5367431640625e-07,0.0
+1,0.0031606049742549658,0.07009147107601166,0.4524555802345276
