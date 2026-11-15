@@ -1,0 +1,32 @@
+\section{Limitations and Conclusion}
+Our certified models use Boolean tasks rather than naturally occurring language-model
+computations. Their depth certificates depend on the specified interventions,
+strictness constraints and bypass tests; backup computation outside the designated
+circuit remains a threat to interpretation. The reduced one-day experimental grid
+uses $L=D$, $k\in\{4,8,16\}$ and 100 graph examples, limiting the resolution of
+hyperparameter and seed comparisons. Any claims about the depth trend must be
+interpreted against the completed, merged Boolean results rather than the pilot
+numbers alone.
+
+Our GPT-2 validation is small: 10 retained two-hop prompts and 12 one-hop
+controls, selected using an answer-rank threshold of 50. State-paired depth
+contrasts and causal-specificity tests have only six and seven usable observations,
+respectively. Depth sensitivity is supported for PLT but not CLT, whereas causal
+specificity is supported for CLT but not PLT. Graph--intervention correlations
+are positive but inconclusive. The absolute-normalised depth measure also
+changes the interpretation of V1. These outcomes do not establish a universal
+depth-collapse effect in pretrained language models.
+
+The GPT-2 evaluation uses previously trained transcoders with the corrected
+validation code. Although the Hugging Face and generic-engine MLP-input
+consistency check passes, the original and corrected training implementations
+are not identical. The PLT has 37.8 million parameters and the CLT has
+141.6 million; their reconstruction errors therefore do not constitute a
+parameter-matched architectural comparison. The transcoders are small relative
+to production systems, and attribution graphs retain substantial skip and
+error-node influence. InterpBench was not run.
+
+Taken together, the study distinguishes reconstructing a computation from
+faithfully representing its causal structure. Certified-depth experiments
+provide controlled tests of graph fidelity, while the mixed GPT-2 results
+highlight the need for larger, parameter-controlled real-model evaluations.

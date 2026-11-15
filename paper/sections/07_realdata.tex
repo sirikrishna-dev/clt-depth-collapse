@@ -1,0 +1,41 @@
+\section{Validation on a Pretrained Language Model}\label{sec:realdata}
+% Every number below is a macro from generated/numbers_lm.tex (scripts/make_lm_tables.py).
+% Write the interpretation sentences ONLY after the Colab run; state the result whichever way it goes.
+A controlled Boolean setting establishes correctness but may make attribution too easy. We therefore
+evaluate feature-to-feature graphs with error nodes on two-hop factual recall in
+\LMModel{}~\cite{lindsey2025biology}:
+\emph{``Fact: the capital of the state containing Dallas is''} $\to$ \emph{Austin}. The intermediate entity
+(\emph{Texas}) is known, and a one-hop control prompt with the same answer
+(\emph{``Fact: the capital of Texas is''}) removes exactly one inferential step. We keep prompts whose answer
+ranks in the model's top 50 and whose state capital the model also knows, leaving \LMNTwoHop{} two-hop and
+\LMNOneHop{} one-hop prompts. Both transcoders use 2,048 features per layer, TopK $k=32$, and 4,000 training steps. We evaluate previously trained checkpoints using the corrected validation implementation; the models are not parameter-matched (37.8M PLT versus 141.6M CLT parameters). The Hugging Face and generic-engine MLP-input consistency check passed (maximum absolute difference below $10^{-3}$);
+held-out normalised MSE is \LMNMSEPLT{} (PLT) and \LMNMSECLT{} (CLT).
+
+\paragraph{V1: is the depth metric sensitive to depth on real data?}
+If $\Dfeat$ measures inferential depth, it should be larger from the city tokens of a two-hop prompt than from
+the state tokens of its one-hop control. Paired by state, $\Dfeat(\text{2-hop})-\Dfeat(\text{1-hop})$ is
+\LMVOnePLT{} [\LMVOneLoPLT{}, \LMVOneHiPLT{}] for the PLT ($p=\LMVOnePPLT$) and
+\LMVOneCLT{} [\LMVOneLoCLT{}, \LMVOneHiCLT{}] for the CLT ($p=\LMVOnePCLT$). Thus V1 is supported for PLT, but not for CLT. The absolute-normalised depth contrast is negative for both models, so the result is sensitive to the depth definition.
+
+\paragraph{V2: are the state features causally used?}
+State-selective features are chosen leave-one-out, so the prompt being tested never influences the selection.
+Zeroing them lowers the answer logit by \LMVTwoPLT{} [\LMVTwoLoPLT{}, \LMVTwoHiPLT{}] (PLT) and
+\LMVTwoCLT{} [\LMVTwoLoCLT{}, \LMVTwoHiCLT{}] (CLT) \emph{more} than zeroing the same number of random active
+features in the same layers ($p=\LMVTwoPPLT$, $p=\LMVTwoPCLT$). The confidence interval excludes zero for CLT but not PLT, supporting causal specificity only for CLT in this sample.
+
+\paragraph{V3: does the graph's claim match the intervention?}
+Across prompts, the graph-claimed mediation through state features (IMF) correlates with the measured ablation
+drop with Spearman $\rho=\LMVThreePLT$ (PLT, $p=\LMVThreePPLT$) and $\rho=\LMVThreeCLT$ (CLT, $p=\LMVThreePCLT$). Both correlations are positive but inconclusive at the available sample size.
+
+\paragraph{V4: CLT versus PLT.}
+On the same two-hop prompts, CLT minus PLT $\Dfeat$ is \LMDfeatDiffCLTminusPLT{} ($p=\LMDfeatDiffP$);
+Table~\ref{tab:lm} reports skip mass, IMF, ablation drop and error influence. CLT has lower held-out reconstruction error, but its parameter count is substantially larger, and its causal and depth advantages are not uniform.
+
+\input{generated/tab_lm_validation}
+
+\paragraph{Scope.} The real-model transcoders are trained by us and are far smaller than
+production transcoders; error nodes carry \LMErrInflPLT{} (PLT) and \LMErrInflCLT{} (CLT) of the logit's
+influence, and the replacement model without error terms keeps the original top-1 token on a fraction
+\LMTopKeptPLT{} (PLT) and \LMTopKeptCLT{} (CLT) of prompts. InterpBench~\cite{gupta2024interpbench}
+(semi-synthetic SIIT transformers with known circuits) is the natural next step between our certified
+Boolean models and a pretrained LM; the evaluation code is included but was not run for this submission.
