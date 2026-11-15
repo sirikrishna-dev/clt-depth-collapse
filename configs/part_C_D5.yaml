@@ -1,0 +1,31 @@
+# Configuration used for the reported results, part covering D = 5.
+# Parts A, B and C use identical settings and differ only in depth; each was run on a Colab T4 GPU,
+# then merged:  python scripts/merge_results.py results/part_A results/part_B results/part_C --out results/merged
+# Differences from configs/full.yaml (fixed before running, to fit the compute budget):
+# L = D layers only (no over-provisioned models), k in {4, 8, 16}, 100 graph examples per model.
+name: part_C
+out_dir: results/part_C
+ckpt_dir: checkpoints/part_C
+depths: [5]
+seeds: [0, 1, 2, 3, 4]
+overprovision: [0]
+siit:
+  steps: 4000
+  batch: 128
+  p_subset: 0.3
+  w_site: 0.3
+  lr: 0.001
+  strict: true
+  max_retries: 2
+replacements:
+  kinds: [plt, clt, plt_parammatched]
+  n_features: 128
+  k_values: [4, 8, 16]
+  main_k: 8
+  steps: 6000
+  batch: 2048
+  lr: 0.001
+graphs:
+  n_examples: 100
+probes:
+  n_perm: 1000

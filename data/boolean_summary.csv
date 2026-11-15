@@ -1,0 +1,6 @@
+D,operators,n_train,n_val,n_test,bits_per_row
+1,XOR,5000,1000,1000,16
+2,AND then XOR,5000,1000,1000,16
+3,XOR then AND then XOR,5000,1000,1000,16
+4,AND then XOR then AND then XOR,5000,1000,1000,16
+5,XOR then AND then XOR then AND then XOR,5000,1000,1000,16

@@ -21,8 +21,9 @@ asks four validation questions:
 Plus fidelity: reconstruction NMSE on held-out WikiText, and whether the replacement
 model (no error terms) keeps the original model's answer.
 
-Run on Colab (GPU, internet):
-    python -m cdc.realdata.lm_twohop --model gpt2 --out results/lm_twohop
+Run on Colab (GPU, internet); the defaults reproduce the reported run:
+    PYTHONPATH=src python -m cdc.realdata.lm_twohop --model gpt2 --out results/gpt2_twohop
+(zero-shot prompts, answer rank <= 50; with the stricter rank <= 10 no two-hop prompt survives in GPT-2 small)
 Every number in the paper's Sec. 7 must come from the CSVs this writes.
 """
 from __future__ import annotations
@@ -69,6 +70,13 @@ TRIPLES = [
 ]
 TEMPLATE_2HOP = "Fact: the capital of the state containing {city} is"
 TEMPLATE_1HOP = "Fact: the capital of {state} is"
+# Few-shot prefixes: two worked examples from states that are NOT in TRIPLES (Alabama, Iowa),
+# so no tested city, state or answer appears in the prefix. GPT-2 small answers almost no
+# zero-shot capital question (first run: 0 two-hop, 2 one-hop kept), so the paper run uses these.
+FEWSHOT_2HOP = ("Fact: the capital of the state containing Birmingham is Montgomery.\n"
+                "Fact: the capital of the state containing Davenport is Des Moines.\n")
+FEWSHOT_1HOP = ("Fact: the capital of Alabama is Montgomery.\n"
+                "Fact: the capital of Iowa is Des Moines.\n")
 N_RANDOM_DRAWS = 5
 
 
@@ -166,7 +174,8 @@ def span_positions(tok, prompt, span):
     tokenised WITHOUT its trailing space; tokenising "... containing " would add a lone
     space token and shift the start by one (for a one-token city, the span would be empty).
     """
-    pre = prompt.split(span)[0]
+    i = prompt.rindex(span)                      # the query is the last line; demos come first
+    pre = prompt[:i]
     n0 = len(tok(pre.rstrip(" "))["input_ids"]) if pre.strip() else 0
     n1 = len(tok(pre + span)["input_ids"])
     if n1 <= n0:
@@ -179,21 +188,38 @@ def answer_rank(gm, ids, tgt):
     return int((logits[-1] > logits[-1, tgt]).sum()) + 1, logits
 
 
-def build_prompts(gm, tok, triples, max_rank):
+def build_prompts(gm, tok, triples, max_rank, fewshot=True, filter_mode="candidates"):
+    """Score every prompt and decide which are kept.
+
+    filter_mode="vocab":      keep if the answer's first token ranks <= max_rank in the whole vocabulary.
+    filter_mode="candidates": keep if the answer's first token beats every other capital's first
+                              token (rank 1 among the capitals), i.e. the model picks the right capital.
+    A 2-hop prompt is kept only if its state's 1-hop prompt is also kept (the model knows the capital).
+    """
+    cap_tok = {cap: tok(" " + cap)["input_ids"][0] for _, _, cap in triples}
+    cand = sorted(set(cap_tok.values()))
     rows = []
     for city, state, cap in triples:
-        tgt = tok(" " + cap)["input_ids"][0]
-        for hop, p, span in (("2hop", TEMPLATE_2HOP.format(city=city), city),
-                             ("1hop", TEMPLATE_1HOP.format(state=state), state)):
+        tgt = cap_tok[cap]
+        for hop, body, span in (("2hop", TEMPLATE_2HOP.format(city=city), city),
+                                ("1hop", TEMPLATE_1HOP.format(state=state), state)):
+            prefix = (FEWSHOT_2HOP if hop == "2hop" else FEWSHOT_1HOP) if fewshot else ""
+            p = prefix + body
             ids = torch.tensor(tok(p)["input_ids"], device=gm.device)
-            rank, _ = answer_rank(gm, ids, tgt)
+            rank, logits = answer_rank(gm, ids, tgt)
+            last = logits[-1]
+            cand_rank = int((last[cand] > last[tgt]).sum()) + 1
+            others = [c for c in cand if c != tgt]
+            margin = float(last[tgt] - last[others].max()) if others else float("nan")
             rows.append(dict(hop=hop, city=city, state=state, capital=cap, prompt=p, root_span=span,
-                             target_token=tgt, rank=rank))
+                             target_token=tgt, rank=rank, cand_rank=cand_rank, n_candidates=len(cand),
+                             margin_vs_best_other_capital=margin))
     pr = pd.DataFrame(rows).drop_duplicates(subset=["hop", "prompt"]).reset_index(drop=True)
-    ok1 = set(pr[(pr.hop == "1hop") & (pr["rank"] <= max_rank)].state)
-    # keep a 2-hop prompt only if the model also knows the state's capital (1-hop), so a
-    # failure cannot come from not knowing the capital at all
-    pr["kept"] = ((pr["rank"] <= max_rank) & pr.state.isin(ok1))
+    ok = (pr["cand_rank"] == 1) if filter_mode == "candidates" else (pr["rank"] <= max_rank)
+    ok1 = set(pr[ok & (pr.hop == "1hop")].state)
+    pr["kept"] = ok & pr.state.isin(ok1)
+    pr["filter_mode"] = filter_mode
+    pr["fewshot"] = fewshot
     return pr
 
 
@@ -313,6 +339,11 @@ def summarise(df):
 
     for kind, d in df.groupby("kind"):
         two, one = d[d.hop == "2hop"], d[d.hop == "1hop"]
+        if two.empty or one.empty or "state_ablation_logit_drop" not in d:
+            out.append(dict(test="NOT_RUN", kind=kind, quantity=f"n_2hop={len(two)}, n_1hop={len(one)}: "
+                            "too few correctly answered prompts", n=0, mean=np.nan, ci_lo=np.nan, ci_hi=np.nan,
+                            p_signflip=np.nan))
+            continue
         # V1: paired by state (2-hop averaged over that state's cities)
         s2 = two.groupby("state").root_signed_D_feat.mean()
         s1 = one.set_index("state").root_signed_D_feat
@@ -333,7 +364,7 @@ def summarise(df):
             out.append(dict(test="V3_graph_vs_intervention", kind=kind, quantity="Spearman(IMF, ablation drop)",
                             n=len(t), mean=float(rr), ci_lo=np.nan, ci_hi=np.nan, p_signflip=float(pp)))
     # V4: CLT vs PLT on the same prompts
-    if set(df.kind) >= {"plt", "clt"}:
+    if set(df.kind) >= {"plt", "clt"} and "state_ablation_logit_drop" in df:
         key = ["hop", "city", "state"]
         w = df.pivot_table(index=key, columns="kind",
                            values=["root_signed_D_feat", "skip_mass", "IMF_h1", "state_ablation_logit_drop", "error_influence"])
@@ -356,9 +387,15 @@ def main():
     ap.add_argument("--steps", type=int, default=4000)
     ap.add_argument("--batch", type=int, default=16)
     ap.add_argument("--seq-len", type=int, default=128)
-    ap.add_argument("--max-rank", type=int, default=10, help="keep prompts whose answer token rank <= this")
+    ap.add_argument("--max-rank", type=int, default=50, help="keep prompts whose answer token rank <= this (vocab filter)")
     ap.add_argument("--max-graph-features", type=int, default=300)
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--filter", default="vocab", choices=["vocab", "candidates"],
+                    help="vocab (reported run): answer rank <= --max-rank in the full vocabulary; "
+                         "candidates: the right capital must rank first among all capitals")
+    ap.add_argument("--fewshot", action="store_true",
+                    help="prefix two worked examples (states not in the test set); off in the reported run")
+    ap.add_argument("--prompts-only", action="store_true", help="only score prompts (fast check), then stop")
     a = ap.parse_args()
     device = "cuda" if torch.cuda.is_available() else "cpu"
     os.makedirs(a.out, exist_ok=True)
@@ -375,13 +412,18 @@ def main():
     print(f"HF vs generic engine max |mlp_in| gap: {gap:.2e}")
     assert gap < 1e-3, "HF capture and generic engine disagree; do not trust the run"
 
-    prompts = build_prompts(gm, tok, TRIPLES, a.max_rank)
+    prompts = build_prompts(gm, tok, TRIPLES, a.max_rank, fewshot=a.fewshot, filter_mode=a.filter)
     prompts.to_csv(os.path.join(a.out, "prompts.csv"), index=False)
     n2 = int((prompts.kept & (prompts.hop == "2hop")).sum()); n1 = int((prompts.kept & (prompts.hop == "1hop")).sum())
-    print(f"kept {n2} two-hop and {n1} one-hop prompts (answer rank <= {a.max_rank}, state capital known)")
+    t2 = int((prompts.hop == "2hop").sum()); t1 = int((prompts.hop == "1hop").sum())
+    print(f"kept {n2}/{t2} two-hop and {n1}/{t1} one-hop prompts "
+          f"(filter={a.filter}, fewshot={a.fewshot}, state capital known)")
+    if a.prompts_only:
+        print(prompts[["hop", "city", "state", "capital", "rank", "cand_rank", "kept"]].to_string(index=False))
+        return
     if n2 < 8:
-        print("WARNING: fewer than 8 two-hop prompts survive. Rerun with --model gpt2-medium "
-              "or --max-rank 20, and report both runs.")
+        print("WARNING: fewer than 8 two-hop prompts survive; the V-tests will be weak or not run. "
+              "Report the counts honestly (this is itself a finding about GPT-2 small).")
 
     tcs, fid = {}, []
     for kind in ("plt", "clt"):

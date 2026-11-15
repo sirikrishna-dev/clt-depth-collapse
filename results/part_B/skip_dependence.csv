@@ -1,0 +1,10 @@
+tc,model,D,seed,kind,k,n_informative,full_route_acc,stepwise_only_acc,skip_only_acc,ISD
+siit_D4_L4_seed0__plt_k4,siit_D4_L4_seed0,4,0,plt,4,3089,1.0,1.0,0.0,0.0
+siit_D4_L4_seed0__plt_k8,siit_D4_L4_seed0,4,0,plt,8,3089,1.0,1.0,0.0,0.0
+siit_D4_L4_seed0__plt_k16,siit_D4_L4_seed0,4,0,plt,16,3089,1.0,1.0,0.0,0.0
+siit_D4_L4_seed0__clt_k4,siit_D4_L4_seed0,4,0,clt,4,3089,1.0,0.8416963418582065,0.0,0.1583036581417934
+siit_D4_L4_seed0__clt_k8,siit_D4_L4_seed0,4,0,clt,8,3089,1.0,0.8928455810942052,0.0,0.1071544189057948
+siit_D4_L4_seed0__clt_k16,siit_D4_L4_seed0,4,0,clt,16,3089,1.0,1.0,0.0,0.0
+siit_D4_L4_seed0__plt_parammatched_k4,siit_D4_L4_seed0,4,0,plt_parammatched,4,3089,1.0,1.0,0.0,0.0
+siit_D4_L4_seed0__plt_parammatched_k8,siit_D4_L4_seed0,4,0,plt_parammatched,8,3089,1.0,1.0,0.0,0.0
+siit_D4_L4_seed0__plt_parammatched_k16,siit_D4_L4_seed0,4,0,plt_parammatched,16,3089,1.0,1.0,0.0,0.0

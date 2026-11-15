@@ -1,0 +1,106 @@
+{
+ "D": 3,
+ "n_layers": 3,
+ "n_test_examples": 1000,
+ "clean_bit_acc": 1.0,
+ "clean_exact_acc": 1.0,
+ "iia_h1_rand_all": 1.0,
+ "iia_h1_rand_flip": 1.0,
+ "iia_h1_rand_n_flip": 11919,
+ "iia_h1_cf_all": 1.0,
+ "iia_h1_cf_flip": 1.0,
+ "iia_h1_cf_n_flip": 12027,
+ "iia_h2_rand_all": 1.0,
+ "iia_h2_rand_flip": 1.0,
+ "iia_h2_rand_n_flip": 17822,
+ "iia_h2_cf_all": 1.0,
+ "iia_h2_cf_flip": 1.0,
+ "iia_h2_cf_n_flip": 17780,
+ "strict_scores": {
+  "attn0": 1.0,
+  "attn1": 1.0,
+  "attn2": 1.0,
+  "mlp0": 1.0,
+  "mlp1": 1.0
+ },
+ "strict_min": 1.0,
+ "bypass": {
+  "h1": {
+   "score": 1.0,
+   "n_informative_bits": 3966,
+   "heldout_meanablate_score": 1.0
+  },
+  "h2": {
+   "score": 1.0,
+   "n_informative_bits": 5992,
+   "heldout_meanablate_score": 1.0
+  }
+ },
+ "bypass_min": 1.0,
+ "bypass_heldout_min": 1.0,
+ "site_separation": {
+  "h1": 435.0546569824219,
+  "h2": 379.9581298828125
+ },
+ "site_separation_min": 379.9581298828125,
+ "circuit_only_acc": 1.0,
+ "mlp_meanablate_acc": {
+  "mlp0": 0.79225,
+  "mlp1": 0.7561875,
+  "mlp2": 0.4656875
+ },
+ "mlp_meanablate_acc_fullmodel": {
+  "mlp0": 0.8215625,
+  "mlp1": 0.7530625,
+  "mlp2": 0.38675
+ },
+ "n_necessary_mlps": 3,
+ "iia_cf_min": 1.0,
+ "certified": true,
+ "model": "siit_D3_L3_seed2",
+ "seed": 2,
+ "steps": 4000,
+ "attempts": [],
+ "train_history": [
+  {
+   "step": 0,
+   "loss": 3.8110671043395996,
+   "beh": 0.8825019001960754,
+   "iit": 0.859908401966095,
+   "strict": 0.8816100358963013,
+   "sec": 0.09737706184387207
+  },
+  {
+   "step": 1000,
+   "loss": 0.0019563636742532253,
+   "beh": 8.193675603251904e-05,
+   "iit": 8.689149399287999e-05,
+   "strict": 0.0010556618217378855,
+   "sec": 74.36237978935242
+  },
+  {
+   "step": 2000,
+   "loss": 0.00015404948499053717,
+   "beh": 2.914243668783456e-05,
+   "iit": 3.126256342511624e-05,
+   "strict": 4.134288610657677e-05,
+   "sec": 147.44935584068298
+  },
+  {
+   "step": 3000,
+   "loss": 8.800179784884676e-05,
+   "beh": 1.9022303604288027e-05,
+   "iit": 2.1196226953179576e-05,
+   "strict": 1.9435239664744586e-05,
+   "sec": 220.67239141464233
+  },
+  {
+   "step": 3999,
+   "loss": 8.257344597950578e-05,
+   "beh": 1.7496146028861403e-05,
+   "iit": 1.956665437319316e-05,
+   "strict": 1.8418024410493672e-05,
+   "sec": 294.91417121887207
+  }
+ ]
+}

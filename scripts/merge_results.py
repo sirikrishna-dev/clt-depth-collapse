@@ -1,7 +1,7 @@
 #!/usr/bin/env python
-"""Merge the per-person split runs (configs/day_A|B|C.yaml) into one results folder.
+"""Merge the three parts of the run (configs/part_A_D1-3, part_B_D4, part_C_D5) into one results folder.
 
-    python scripts/merge_results.py results/day_A results/day_B results/day_C --out results/full
+    python scripts/merge_results.py results/part_A results/part_B results/part_C --out results/merged
 
 Raw per-model CSVs are concatenated (duplicates refused), certificate JSONs copied.
 Summary CSVs are NOT merged: regenerate them with make_tables.py on the merged folder.
@@ -23,9 +23,16 @@ def main():
     ap.add_argument("inputs", nargs="+")
     ap.add_argument("--out", required=True)
     a = ap.parse_args()
-    os.makedirs(os.path.join(a.out, "certificates"), exist_ok=True)
+    cert_out = os.path.join(a.out, "certificates")
+    if os.path.isdir(cert_out):            # re-running the merge rebuilds the output from scratch
+        shutil.rmtree(cert_out)
+    os.makedirs(cert_out, exist_ok=True)
     for name in RAW:
-        parts = [pd.read_csv(os.path.join(d, name)) for d in a.inputs if os.path.exists(os.path.join(d, name))]
+        parts = []
+        for d in a.inputs:
+            f = os.path.join(d, name)
+            if os.path.exists(f) and os.path.getsize(f) > 2:      # skip empty files (e.g. no certified model)
+                parts.append(pd.read_csv(f))
         if not parts:
             print(f"missing everywhere: {name}")
             continue
@@ -38,9 +45,9 @@ def main():
     n = 0
     for d in a.inputs:
         for f in glob.glob(os.path.join(d, "certificates", "*.json")):
-            dst = os.path.join(a.out, "certificates", os.path.basename(f))
+            dst = os.path.join(cert_out, os.path.basename(f))
             if os.path.exists(dst):
-                raise SystemExit(f"duplicate certificate {f}")
+                raise SystemExit(f"duplicate certificate {f}: two parts contain the same model")
             shutil.copy(f, dst); n += 1
     print(f"certificates: {n}")
 
