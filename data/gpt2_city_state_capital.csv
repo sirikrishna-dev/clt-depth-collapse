@@ -1,0 +1,52 @@
+city,state,capital
+Dallas,Texas,Austin
+Houston,Texas,Austin
+San Antonio,Texas,Austin
+El Paso,Texas,Austin
+Fort Worth,Texas,Austin
+Los Angeles,California,Sacramento
+San Francisco,California,Sacramento
+San Diego,California,Sacramento
+Fresno,California,Sacramento
+Oakland,California,Sacramento
+Miami,Florida,Tallahassee
+Orlando,Florida,Tallahassee
+Tampa,Florida,Tallahassee
+Jacksonville,Florida,Tallahassee
+Buffalo,New York,Albany
+Rochester,New York,Albany
+Brooklyn,New York,Albany
+Chicago,Illinois,Springfield
+Peoria,Illinois,Springfield
+Philadelphia,Pennsylvania,Harrisburg
+Pittsburgh,Pennsylvania,Harrisburg
+Seattle,Washington,Olympia
+Spokane,Washington,Olympia
+Tacoma,Washington,Olympia
+Savannah,Georgia,Atlanta
+Augusta,Georgia,Atlanta
+Cleveland,Ohio,Columbus
+Cincinnati,Ohio,Columbus
+Toledo,Ohio,Columbus
+Detroit,Michigan,Lansing
+Grand Rapids,Michigan,Lansing
+Las Vegas,Nevada,Carson City
+Reno,Nevada,Carson City
+Portland,Oregon,Salem
+Eugene,Oregon,Salem
+St. Louis,Missouri,Jefferson City
+Kansas City,Missouri,Jefferson City
+New Orleans,Louisiana,Baton Rouge
+Shreveport,Louisiana,Baton Rouge
+Louisville,Kentucky,Frankfort
+Lexington,Kentucky,Frankfort
+Baltimore,Maryland,Annapolis
+Bethesda,Maryland,Annapolis
+Tucson,Arizona,Phoenix
+Flagstaff,Arizona,Phoenix
+Memphis,Tennessee,Nashville
+Knoxville,Tennessee,Nashville
+Boulder,Colorado,Denver
+Colorado Springs,Colorado,Denver
+Milwaukee,Wisconsin,Madison
+Green Bay,Wisconsin,Madison

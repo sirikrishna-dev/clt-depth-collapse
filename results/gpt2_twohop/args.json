@@ -1,0 +1,14 @@
+{
+ "model": "gpt2",
+ "out": "/content/lm_twohop_gpt2_corrected",
+ "n_features": 2048,
+ "k": 32,
+ "steps": 4000,
+ "batch": 16,
+ "seq_len": 128,
+ "max_rank": 50,
+ "max_graph_features": 300,
+ "seed": 0,
+ "device": "cuda",
+ "torch": "2.14.1+cu130"
+}

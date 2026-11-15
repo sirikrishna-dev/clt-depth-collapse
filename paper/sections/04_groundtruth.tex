@@ -1,0 +1,14 @@
+\section{Certifying Ground-Truth Depth}\label{sec:gt}
+A model enters the analysis only if it passes all of the following tests:
+\begin{itemize}
+\item clean bit accuracy $\ge 0.99$;
+\item confound-free interchange accuracy $\ge 0.98$ at every hop, on flipped bits, with denominators reported;
+\item strictness $\ge 0.98$ for every non-circuit component;
+\item bypass-freeness $\ge 0.98$, both trained and held-out (mean ablation);
+\item circuit-only accuracy $\ge 0.99$ with all non-circuit components jointly resampled;
+\item every hop-hosting MLP necessary in the circuit-only model (accuracy $\le 0.9$ when mean-ablated);
+\item site separation $\ge 3$.
+\end{itemize}
+Table~\ref{tab:cert} summarises the results (\NCertified{} of \NModels{} models certified; by depth $D=1..5$: \NCertOne, \NCertTwo, \NCertThree, \NCertFour, \NCertFive{} of 3). Models deeper than $D=3$ need longer training. Our pre-specified rule retrains uncertified models with twice the steps.
+\paragraph{Two lessons.} (1) For the Round-1 2-hop task ($y=(a\oplus b)\wedge c$), zeroing the last MLP left accuracy at $100\%$. The AND is a linear threshold that the unembedding computes, so that model has nonlinear depth 1, and a shallow graph would have been \emph{correct}. (2) Single-component strictness is not enough. The non-circuit outputs stayed large and input-dependent, and resampling several of them at once broke the circuit. This is why we add joint resampling and site reservation.
+\begin{table}[t]\centering\caption{Ground-truth certificates (pilot).}\label{tab:cert}\input{generated/tab_certificates.tex}\end{table}

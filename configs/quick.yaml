@@ -1,0 +1,27 @@
+# Small CPU configuration (3 seeds, shorter training; ~2-3 h on 2 CPU cores) for a quick end-to-end check.
+name: quick
+out_dir: results/quick
+ckpt_dir: checkpoints/quick
+depths: [1, 2, 3, 4, 5]
+seeds: [0, 1, 2]
+overprovision: [0]            # extra layers beyond D (0 => n_layers = D)
+siit:
+  steps: 2500
+  p_subset: 0.3                # prob. of resampling ALL non-circuit components jointly
+  w_site: 0.3
+  batch: 128
+  lr: 0.001
+  strict: true
+  max_retries: 1               # uncertified models are retrained once with 2x steps (pre-specified)
+replacements:
+  kinds: [plt, clt]
+  n_features: 128             # per layer, identical for PLT and CLT (matched-feature budget)
+  k_values: [8]            # TopK L0 per token per layer, identical for PLT and CLT
+  main_k: 8
+  steps: 2000
+  batch: 1024
+  lr: 0.001
+graphs:
+  n_examples: 48              # test examples per (model, replacement)
+probes:
+  n_perm: 1000

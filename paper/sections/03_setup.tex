@@ -1,0 +1,10 @@
+\section{Setup}
+\paragraph{Tasks.} Each example has $D{+}1$ 16-bit input vectors $x_0..x_D$. Operations are element-wise: $h_1=x_0\,\mathrm{op}_1\,x_1$, $h_k=h_{k-1}\,\mathrm{op}_k\,x_k$, and $y=h_D$. The operators alternate backwards from a final XOR (D=3: XOR, AND, XOR). XOR is not linearly separable, so the last hop cannot be absorbed into the linear readout (Sec.~\ref{sec:gt}). Each task has 5k/1k/1k train/validation/test examples.
+\paragraph{Models.} Pre-LN transformers with $L=D$ blocks ($d=64$, 4 heads, $d_\mathrm{mlp}=128$, bidirectional attention, one token per bit position). Hop $k$ is aligned to residual coordinate $k{-}1$ after block $k{-}1$.
+\paragraph{Training.} The loss is behaviour + IIT + strictness + a bounded site readout. The IIT term patches the site from a source example; half the sources are \emph{confound-free}, keeping every downstream input fixed. The strictness term resamples one, or jointly all, of: the attention outputs, the MLP outputs off-site, and the upstream raw inputs after each site (a bypass constraint). Site coordinates are reserved: only MLP$_{k-1}$ may write site $k$.
+\paragraph{Replacements.} PLT and CLT read the post-LN MLP input and reconstruct the MLP output. Both use TopK activations with the same $k$ and the same number of features per layer, and are trained for the same steps with the same lr, batch and data. The CLT decodes to every later layer. A parameter-matched PLT has as many parameters as the CLT.
+\paragraph{Attribution graphs and depth.} For each test example we build the local replacement model: frozen attention patterns and LayerNorm scales, active features, and error nodes. Edges are exact direct effects in the resulting affine model. With $C_k$ the signed contribution of the root inputs $x_0,x_1$ to a logit via paths through exactly $k$ feature nodes,
+\begin{equation}
+\Dfeat=\frac{\sum_{k\ge1}k\,|C_k|}{\sum_{k\ge1}|C_k|},\qquad \mathrm{DCR}=\Dfeat/D .
+\end{equation}
+The ground-truth graph has $\Dfeat=D$ (unit-tested). We also report the Circuit-Tracing absolute-normalised variant, the skip mass, and the share of the contribution that is direct (residual, $k{=}0$).
