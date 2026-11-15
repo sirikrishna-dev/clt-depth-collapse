@@ -1,0 +1,3 @@
+\section{Limitations and Conclusion}
+Our models are semi-synthetic. Certification makes their depth precise, but it relies on interventions we chose (see docs/threats\_to\_validity.md). Backup computation in non-circuit components can make the full model's graph shallower without any transcoder artefact. We control for this by pairing PLT and CLT on the same base models. With five seeds per depth, per-depth tests cannot reach $p<0.05$; we rely on pooled trend tests and confidence intervals. The real-model tiers use pruned graphs, and we report their coverage.
+% Conclusion: write after the full run.

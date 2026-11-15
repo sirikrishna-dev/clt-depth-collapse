@@ -1,0 +1,27 @@
+# Larger configuration (adds over-provisioned models L = D+1 and k = 32; ~6-10 h on a Colab T4).
+name: full
+out_dir: results/full
+ckpt_dir: checkpoints/full
+depths: [1, 2, 3, 4, 5]
+seeds: [0, 1, 2, 3, 4]
+overprovision: [0, 1]         # also train n_layers = D+1 (does spare depth change CLT behaviour?)
+siit:
+  steps: 4000
+  batch: 128
+  p_subset: 0.3
+  w_site: 0.3
+  lr: 0.001
+  strict: true
+  max_retries: 2               # uncertified models: retrain with 2x, then 4x steps (pre-specified)
+replacements:
+  kinds: [plt, clt, plt_parammatched]
+  n_features: 128
+  k_values: [2, 4, 8, 16, 32]   # sparsity sweep (Pareto curves)
+  main_k: 8
+  steps: 6000
+  batch: 2048
+  lr: 0.001
+graphs:
+  n_examples: 200
+probes:
+  n_perm: 1000

@@ -1,0 +1,99 @@
+{
+ "D": 2,
+ "n_layers": 2,
+ "n_test_examples": 1000,
+ "clean_bit_acc": 1.0,
+ "clean_exact_acc": 1.0,
+ "iia_h1_rand_all": 1.0,
+ "iia_h1_rand_flip": 1.0,
+ "iia_h1_rand_n_flip": 17918,
+ "iia_h1_cf_all": 1.0,
+ "iia_h1_cf_flip": 1.0,
+ "iia_h1_cf_n_flip": 18046,
+ "strict_scores": {
+  "attn0": 1.0,
+  "attn1": 1.0,
+  "mlp0": 1.0
+ },
+ "strict_min": 1.0,
+ "bypass": {
+  "h1": {
+   "score": 1.0,
+   "n_informative_bits": 6048,
+   "heldout_meanablate_score": 1.0
+  }
+ },
+ "bypass_min": 1.0,
+ "bypass_heldout_min": 1.0,
+ "site_separation": {
+  "h1": 960.365234375
+ },
+ "site_separation_min": 960.365234375,
+ "circuit_only_acc": 1.0,
+ "mlp_meanablate_acc": {
+  "mlp0": 0.7494375,
+  "mlp1": 0.4995625
+ },
+ "mlp_meanablate_acc_fullmodel": {
+  "mlp0": 0.7494375,
+  "mlp1": 0.76575
+ },
+ "n_necessary_mlps": 2,
+ "iia_cf_min": 1.0,
+ "certified": true,
+ "model": "siit_D2_L2_seed0",
+ "seed": 0,
+ "steps": 8000,
+ "attempts": [
+  {
+   "certified": false,
+   "circuit_only_acc": 0.9371875,
+   "iia_cf_min": 1.0,
+   "strict_min": 0.9370625,
+   "bypass_min": 0.9993386243386243,
+   "steps": 4000
+  }
+ ],
+ "train_history": [
+  {
+   "step": 0,
+   "loss": 3.7173056602478027,
+   "beh": 0.7885268926620483,
+   "iit": 0.7917042970657349,
+   "strict": 0.7880440950393677,
+   "sec": 0.5097136497497559
+  },
+  {
+   "step": 2000,
+   "loss": 0.00015545226051472127,
+   "beh": 3.5175340599380434e-05,
+   "iit": 3.732759432750754e-05,
+   "strict": 4.7252073272829875e-05,
+   "sec": 103.84052848815918
+  },
+  {
+   "step": 4000,
+   "loss": 3.469558942015283e-05,
+   "beh": 8.358007107744925e-06,
+   "iit": 8.810669896774925e-06,
+   "strict": 9.991188562707976e-06,
+   "sec": 206.07885813713074
+  },
+  {
+   "step": 6000,
+   "loss": 1.90677928912919e-05,
+   "beh": 3.711247245519189e-06,
+   "iit": 3.909453880623914e-06,
+   "strict": 6.960790869925404e-06,
+   "sec": 308.52303433418274
+  },
+  {
+   "step": 7999,
+   "loss": 1.5912137314444408e-05,
+   "beh": 2.9399252525763586e-06,
+   "iit": 3.1065796974871773e-06,
+   "strict": 5.630163286696188e-06,
+   "sec": 411.11329221725464
+  }
+ ]
+}

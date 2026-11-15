@@ -1,0 +1,31 @@
+% Springer LNCS. Download llncs.cls from Springer (or use the Overleaf "Springer LNCS" template)
+% and place it next to this file.  All result numbers come from generated/numbers.tex.
+\IfFileExists{llncs.cls}{\documentclass[runningheads]{llncs}}{%
+  % fallback so the draft compiles without llncs.cls (layout differs from the final)
+  \documentclass[10pt]{article}\usepackage[margin=1in]{geometry}
+  \newcommand{\institute}[1]{}\newcommand{\titlerunning}[1]{}\newcommand{\authorrunning}[1]{}
+  \newcommand{\keywords}[1]{\par\noindent\textbf{Keywords:} ##1}\renewcommand{\and}{\unskip, }}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx,booktabs,amsmath,amssymb,hyperref,xcolor}
+\input{generated/numbers.tex}
+\input{generated/numbers_lm.tex}
+\newcommand{\Dfeat}{D_{\mathrm{feat}}}
+\begin{document}
+\title{Do Cross-Layer Transcoders Collapse Computational Depth?\\A Certified Depth Sweep with Strict-IIT Transformers}
+\titlerunning{CLT Depth Collapse: A Certified Depth Sweep}
+\author{Team 20 -- The Invariants}  % replace with author names and affiliations
+\authorrunning{Team 20}
+\institute{AFML course project}
+\maketitle
+\input{sections/00_abstract}
+\input{sections/01_intro}
+\input{sections/02_related}
+\input{sections/03_setup}
+\input{sections/04_groundtruth}
+\input{sections/05_results}
+\input{sections/06_validation}
+\input{sections/07_realdata}
+\input{sections/08_limitations}
+\IfFileExists{splncs04.bst}{\bibliographystyle{splncs04}}{\bibliographystyle{plain}}
+\bibliography{refs}
+\end{document}

@@ -1,0 +1,72 @@
+hop,city,state,capital,prompt,root_span,target_token,rank,kept
+2hop,Dallas,Texas,Austin,Fact: the capital of the state containing Dallas is,Dallas,9533,40,True
+1hop,Dallas,Texas,Austin,Fact: the capital of Texas is,Texas,9533,24,True
+2hop,Houston,Texas,Austin,Fact: the capital of the state containing Houston is,Houston,9533,36,True
+2hop,San Antonio,Texas,Austin,Fact: the capital of the state containing San Antonio is,San Antonio,9533,27,True
+2hop,El Paso,Texas,Austin,Fact: the capital of the state containing El Paso is,El Paso,9533,86,False
+2hop,Fort Worth,Texas,Austin,Fact: the capital of the state containing Fort Worth is,Fort Worth,9533,59,False
+2hop,Los Angeles,California,Sacramento,Fact: the capital of the state containing Los Angeles is,Los Angeles,19375,43,True
+1hop,Los Angeles,California,Sacramento,Fact: the capital of California is,California,19375,23,True
+2hop,San Francisco,California,Sacramento,Fact: the capital of the state containing San Francisco is,San Francisco,19375,56,False
+2hop,San Diego,California,Sacramento,Fact: the capital of the state containing San Diego is,San Diego,19375,61,False
+2hop,Fresno,California,Sacramento,Fact: the capital of the state containing Fresno is,Fresno,19375,26,True
+2hop,Oakland,California,Sacramento,Fact: the capital of the state containing Oakland is,Oakland,19375,71,False
+2hop,Miami,Florida,Tallahassee,Fact: the capital of the state containing Miami is,Miami,22676,399,False
+1hop,Miami,Florida,Tallahassee,Fact: the capital of Florida is,Florida,22676,44,True
+2hop,Orlando,Florida,Tallahassee,Fact: the capital of the state containing Orlando is,Orlando,22676,201,False
+2hop,Tampa,Florida,Tallahassee,Fact: the capital of the state containing Tampa is,Tampa,22676,80,False
+2hop,Jacksonville,Florida,Tallahassee,Fact: the capital of the state containing Jacksonville is,Jacksonville,22676,249,False
+2hop,Buffalo,New York,Albany,Fact: the capital of the state containing Buffalo is,Buffalo,29285,65,False
+1hop,Buffalo,New York,Albany,Fact: the capital of New York is,New York,29285,124,False
+2hop,Rochester,New York,Albany,Fact: the capital of the state containing Rochester is,Rochester,29285,76,False
+2hop,Brooklyn,New York,Albany,Fact: the capital of the state containing Brooklyn is,Brooklyn,29285,71,False
+2hop,Chicago,Illinois,Springfield,Fact: the capital of the state containing Chicago is,Chicago,27874,122,False
+1hop,Chicago,Illinois,Springfield,Fact: the capital of Illinois is,Illinois,27874,29,True
+2hop,Peoria,Illinois,Springfield,Fact: the capital of the state containing Peoria is,Peoria,27874,294,False
+2hop,Philadelphia,Pennsylvania,Harrisburg,Fact: the capital of the state containing Philadelphia is,Philadelphia,10026,224,False
+1hop,Philadelphia,Pennsylvania,Harrisburg,Fact: the capital of Pennsylvania is,Pennsylvania,10026,91,False
+2hop,Pittsburgh,Pennsylvania,Harrisburg,Fact: the capital of the state containing Pittsburgh is,Pittsburgh,10026,350,False
+2hop,Seattle,Washington,Olympia,Fact: the capital of the state containing Seattle is,Seattle,45760,419,False
+1hop,Seattle,Washington,Olympia,Fact: the capital of Washington is,Washington,45760,717,False
+2hop,Spokane,Washington,Olympia,Fact: the capital of the state containing Spokane is,Spokane,45760,705,False
+2hop,Tacoma,Washington,Olympia,Fact: the capital of the state containing Tacoma is,Tacoma,45760,400,False
+2hop,Savannah,Georgia,Atlanta,Fact: the capital of the state containing Savannah is,Savannah,9371,47,True
+1hop,Savannah,Georgia,Atlanta,Fact: the capital of Georgia is,Georgia,9371,16,True
+2hop,Augusta,Georgia,Atlanta,Fact: the capital of the state containing Augusta is,Augusta,9371,121,False
+2hop,Cleveland,Ohio,Columbus,Fact: the capital of the state containing Cleveland is,Cleveland,14939,71,False
+1hop,Cleveland,Ohio,Columbus,Fact: the capital of Ohio is,Ohio,14939,10,True
+2hop,Cincinnati,Ohio,Columbus,Fact: the capital of the state containing Cincinnati is,Cincinnati,14939,70,False
+2hop,Toledo,Ohio,Columbus,Fact: the capital of the state containing Toledo is,Toledo,14939,58,False
+2hop,Detroit,Michigan,Lansing,Fact: the capital of the state containing Detroit is,Detroit,49860,246,False
+1hop,Detroit,Michigan,Lansing,Fact: the capital of Michigan is,Michigan,49860,60,False
+2hop,Grand Rapids,Michigan,Lansing,Fact: the capital of the state containing Grand Rapids is,Grand Rapids,49860,173,False
+2hop,Las Vegas,Nevada,Carson City,Fact: the capital of the state containing Las Vegas is,Las Vegas,16787,508,False
+1hop,Las Vegas,Nevada,Carson City,Fact: the capital of Nevada is,Nevada,16787,204,False
+2hop,Reno,Nevada,Carson City,Fact: the capital of the state containing Reno is,Reno,16787,234,False
+2hop,Portland,Oregon,Salem,Fact: the capital of the state containing Portland is,Portland,31988,290,False
+1hop,Portland,Oregon,Salem,Fact: the capital of Oregon is,Oregon,31988,136,False
+2hop,Eugene,Oregon,Salem,Fact: the capital of the state containing Eugene is,Eugene,31988,425,False
+2hop,St. Louis,Missouri,Jefferson City,Fact: the capital of the state containing St. Louis is,St. Louis,15375,47,True
+1hop,St. Louis,Missouri,Jefferson City,Fact: the capital of Missouri is,Missouri,15375,49,True
+2hop,Kansas City,Missouri,Jefferson City,Fact: the capital of the state containing Kansas City is,Kansas City,15375,94,False
+2hop,New Orleans,Louisiana,Baton Rouge,Fact: the capital of the state containing New Orleans is,New Orleans,38617,67,False
+1hop,New Orleans,Louisiana,Baton Rouge,Fact: the capital of Louisiana is,Louisiana,38617,26,True
+2hop,Shreveport,Louisiana,Baton Rouge,Fact: the capital of the state containing Shreveport is,Shreveport,38617,144,False
+2hop,Louisville,Kentucky,Frankfort,Fact: the capital of the state containing Louisville is,Louisville,5278,1493,False
+1hop,Louisville,Kentucky,Frankfort,Fact: the capital of Kentucky is,Kentucky,5278,1074,False
+2hop,Lexington,Kentucky,Frankfort,Fact: the capital of the state containing Lexington is,Lexington,5278,2141,False
+2hop,Baltimore,Maryland,Annapolis,Fact: the capital of the state containing Baltimore is,Baltimore,5506,204,False
+1hop,Baltimore,Maryland,Annapolis,Fact: the capital of Maryland is,Maryland,5506,93,False
+2hop,Bethesda,Maryland,Annapolis,Fact: the capital of the state containing Bethesda is,Bethesda,5506,355,False
+2hop,Tucson,Arizona,Phoenix,Fact: the capital of the state containing Tucson is,Tucson,9643,66,False
+1hop,Tucson,Arizona,Phoenix,Fact: the capital of Arizona is,Arizona,9643,23,True
+2hop,Flagstaff,Arizona,Phoenix,Fact: the capital of the state containing Flagstaff is,Flagstaff,9643,107,False
+2hop,Memphis,Tennessee,Nashville,Fact: the capital of the state containing Memphis is,Memphis,19250,109,False
+1hop,Memphis,Tennessee,Nashville,Fact: the capital of Tennessee is,Tennessee,19250,34,True
+2hop,Knoxville,Tennessee,Nashville,Fact: the capital of the state containing Knoxville is,Knoxville,19250,73,False
+2hop,Boulder,Colorado,Denver,Fact: the capital of the state containing Boulder is,Boulder,10656,12,True
+1hop,Boulder,Colorado,Denver,Fact: the capital of Colorado is,Colorado,10656,11,True
+2hop,Colorado Springs,Colorado,Denver,Fact: the capital of the state containing Colorado Springs is,Colorado Springs,10656,35,True
+2hop,Milwaukee,Wisconsin,Madison,Fact: the capital of the state containing Milwaukee is,Milwaukee,14909,11,True
+1hop,Milwaukee,Wisconsin,Madison,Fact: the capital of Wisconsin is,Wisconsin,14909,10,True
+2hop,Green Bay,Wisconsin,Madison,Fact: the capital of the state containing Green Bay is,Green Bay,14909,51,False

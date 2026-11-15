@@ -1,0 +1,11 @@
+\section{Results: Do Attribution Graphs Preserve Depth?}
+\begin{table}[t]\centering\caption{Replacement fidelity at a matched budget (128 features/layer, TopK $k=8$, identical training).}\label{tab:fid}\scriptsize\input{generated/tab_fidelity.tex}\end{table}
+\begin{table}[t]\centering\caption{Effective graph depth (signed, root inputs) at $k=8$; 95\% bootstrap CI over certified seeds.}\label{tab:depth}\scriptsize\input{generated/tab_depth.tex}\end{table}
+\begin{figure}[t]\centering
+\includegraphics[width=0.45\linewidth]{figures/fig1_depth_vs_D.pdf}\\[4pt]
+\includegraphics[width=0.95\linewidth]{figures/fig2_hop_profile.pdf}
+\caption{Top: $\Dfeat$ vs.\ certified depth (dashed line: ground truth). Bottom: share of the root-input contribution by number of feature hops.}\label{fig:depth}\end{figure}
+\paragraph{Both replacements reconstruct almost perfectly.} At the same budget, every replacement reaches relative MSE $\le\RelMSEMax$, and the full replacement model scores at least $\EtoEAccMin$ bit accuracy (Table~\ref{tab:fid}).
+\paragraph{Both lose depth.} Graph depth grows with true depth, but much more slowly. At $D=3$, $\Dfeat=\DfeatCLTDThree$ for the CLT and $\DfeatPLTDThree$ for the PLT (DCR $\DCRCLTDThree$ and $\DCRPLTDThree$). At $D=4$ the DCR falls to $\DCRCLTDFour$ and $\DCRPLTDFour$ (Table~\ref{tab:depth}, Fig.~\ref{fig:depth}). Depth loss increases with $D$ for both replacement types (Spearman $\rho=\TrendRhoCLT$ for CLT, $\TrendRhoPLT$ for PLT).
+\paragraph{At a matched budget, the headline depth gap is small.} The paired CLT$-$PLT difference in $\Dfeat$ is $\DiffCLTPLTDTwo$, $\DiffCLTPLTDThree$ and $\DiffCLTPLTDFour$ at $D=2,3,4$, with sign-flip $p=\PvalDTwo$, $\PvalDThree$ and $\PvalDFour$. The CLT does place more mass on edges that skip layers: $\SkipCLTDThree$ vs.\ $\SkipPLTDThree$ at $D=3$, and $\SkipCLTDFour$ vs.\ $\SkipPLTDFour$ at $D=4$.
+% PILOT (3 seeds). Re-state after the full 5-seed run, the k-sweep and the param-matched PLT.
